@@ -1,9 +1,13 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
+  "why-sidetrack": "Why Sidetrack?",
+  "quickstart": "Quick Start",
+  "-Guides": {
+    "title": "Guides",
+    "type": "separator"
+  },
+  "examples": {
+    "title": "Examples",
     "type": "page"
   },
   "contact": {

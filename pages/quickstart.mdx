@@ -1,0 +1,66 @@
+# Quickstart
+
+In this tutorial, you'll learn how to add Sidetrack to your project and run your first job.
+
+1. Install using npm
+
+```bash filename="Terminal"
+npm install sidetrack
+```
+
+```twoslash include main
+import { Sidetrack } from "sidetrack";
+
+const sidetrack = new Sidetrack<{
+      userOnboarding: { email: string }
+    }>({
+      databaseOptions: {
+        connectionString: process.env["DATABASE_URL"]!
+      },
+      queues: {
+        userOnboarding: {
+          handler: async (job) => {
+            console.log("Welcome ${job.payload.email}")
+          },
+        },
+      },
+    });
+```
+
+2. Import it into your project, and initialize Sidetrack by defining your queues
+
+```ts twoslash
+// @include: main
+
+sidetrack.start(); // starts listening for new jobs in your DB
+```
+
+Notice how you pass in the types for your queues, specifying your queueName as the key (`userOnboarding`), and the value being the type for your job's payload (`{email: string}`).
+
+To insert a job, use the insertJob function to specify the queue and the job payload.
+
+```ts twoslash
+// @include: main
+// ---cut---
+sidetrack.insertJob("userOnboarding", { email: "a@example.com" });
+```
+
+Once the job is inserted, Sidetrack will pick it up and run it. You should see a log in your terminal! 
+```console 
+Hello a@example.com!
+```
+
+You are ready to continue your sidetrack journey! Good luck and don't get sidetracked!
+
+
+## More on types
+
+Notice how the types you defined above prevent you from inserting an invalid job.
+
+```ts twoslash
+// @include: main
+// ---cut---
+// @errors: 2345
+sidetrack.insertJob("userOnboarding", { phone: "11111111111" });
+```
+

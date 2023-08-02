@@ -1,0 +1,5 @@
+# Motivation
+
+After working on a handful of applications, we noticed that we couldn't find a library in TypeScript/JavaScript ecosystem for working with background jobs that was database-backed and TypeScript-first. The most popular job processing libraries in the Node.js ecosystem use Redis, which is a great tool, but we wanted to use a database that we were already using in our applications. We also wanted to be able to use TypeScript to define our jobs and have a great developer experience. Additionally, databases allow for transactional guarantees, so we can avoid inserting jobs into the queue if the transaction fails. 
+
+Our focus is on relational databases, namely PostgreSQL, but we are open to supporting other databases in the future. This would make us the first database-backed job processing library in the Node.js ecosystem that we know of to support more than PostgreSQL.
