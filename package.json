@@ -2,6 +2,11 @@
   "name": "sidetrack-website",
   "version": "0.0.1",
   "description": "Sidetrack website",
+  "homepage": "https://sidetrack.run",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidetracklabs/website.git"
+  },
   "scripts": {
     "build": "next build && touch out/.nojekyll",
     "build-and-deploy": "pnpm run build && pnpm run deploy-website",
@@ -11,29 +16,22 @@
     "lint": "next lint",
     "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sidetracklabs.git"
-  },
-  "author": "Shu Ding <g@shud.in>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sidetracklabs/issues"
-  },
-  "homepage": "https://github.com/sidetracklabs#readme",
   "dependencies": {
-    "next": "^13.4.10",
-    "nextra": "latest",
-    "nextra-theme-docs": "latest",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "13.4.10",
+    "nextra": "2.10.0",
+    "nextra-theme-docs": "2.10.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "sharp": "0.32.4"
   },
   "devDependencies": {
     "@mdx-js/mdx": "2.3.0",
     "@types/node": "20.4.5",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
     "gh-pages": "5.0.0",
     "postcss": "8.4.27",
-    "typescript": "^5.1.6"
+    "prettier": "3.0.0",
+    "typescript": "5.1.6"
   }
 }
