@@ -1,6 +1,6 @@
 import { Callout } from "nextra/components";
 
-# Custom database client
+# Custom database clients
 
 ## Included clients
 
@@ -43,11 +43,11 @@ sidetrack.insertJob(
   { email: "hello@example.com" },
   {
     databaseClient: makePgSidetrackClient(pool),
-  }
+  },
 );
 ```
 
-Similarly, the @sidetrack/client-prisma package exposes a `makePrismaSidetrackClient` function that can be used to create a client that works with prisma. You can find the documentation for it [here](https://sidetracklabs.github.io/sidetrack/functions/_sidetrack_client_prisma.makePrismaSidetrackClient.html).
+Similarly, the `@sidetrack/client-prisma` package exposes a `makePrismaSidetrackClient` function that can be used to create a client that works with prisma. You can find the documentation for it [here](https://sidetracklabs.github.io/sidetrack/functions/_sidetrack_client_prisma.makePrismaSidetrackClient.html).
 
 <Callout>
   With this custom client, you can now run most of the functions that are

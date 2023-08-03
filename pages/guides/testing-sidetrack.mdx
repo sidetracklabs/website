@@ -1,22 +1,20 @@
-import { Callout } from "nextra/components";
-
 # Testing Sidetrack
 
-Sidetrack provides multiple test utilities function under the SidetrackTest class.
+Sidetrack provides multiple test utilities function under the `SidetrackTest` class.
 
-The SidetrackTest class extends all the functions under Sidetrack, but also exposes these helpful utils:
+The `SidetrackTest` class extends all the functions under `Sidetrack`, but also exposes these helpful utils:
 
-1. runJob
-2. runQueue
-3. listJobs
-4. listJobStatuses
+1. `runJob`
+2. `runJobs`
+3. `listJobs`
+4. `listJobStatuses`
 
 Here's some common scenarios when testing your background jobs.
 
 ## Running a job
 
-In your tests, if you don't run sidetrack.start(), then Sidetrack won't poll your database for new jobs.
-You can manually run a job with the runJob function.
+In your tests, if you don't run `sidetrack.start()`, then Sidetrack won't poll your database for new jobs.
+You can manually run a job with the `runJob` function.
 
 ```ts twoslash
 import { SidetrackTest } from "sidetrack";
@@ -32,71 +30,69 @@ it("job runs", async () => {
     queues: {
       userOnboarding: {
         handler: async (job) => {
-          console.log("ran job")
-        }
+          console.log("ran job");
+        },
       },
     },
   });
-  
-  const job = await sidetrack.insertJob("userOnboarding", { email: "a@example.com" });
-  // this job stays in scheduled and won't be run because we haven't run sidetrack.start()
-  expect((await sidetrack.getJob(job.id)).status).toBe("scheduled")
-  
-  // You decide when to run the job
-  await sidetrack.runJob(job.id)
-  expect((await sidetrack.getJob(job.id)).status).toBe("completed")
-})
 
+  const job = await sidetrack.insertJob("userOnboarding", {
+    email: "a@example.com",
+  });
+  // this job stays in scheduled and won't be run because we haven't run sidetrack.start()
+  expect((await sidetrack.getJob(job.id)).status).toBe("scheduled");
+
+  // You decide when to run the job
+  await sidetrack.runJob(job.id);
+  expect((await sidetrack.getJob(job.id)).status).toBe("completed");
+});
 ```
+
 ## Running jobs in a queue
 
-While runJob only allows you to run a single job, often you may want to run all the jobs on a queue.
+While `runJob` only allows you to run a single job, often you may want to run all the jobs on a queue.
 
-```ts twoslash
-// @noErrors
-
+```ts
 // You can run jobs on a single queue
-await sidetrack.runQueue("userOnboarding"); 
+await sidetrack.runJobs({ queue: "userOnboarding" });
 ```
 
-By default, runQueue runs jobs that are scheduled in the past or present. If you want to include future jobs you may pass an option for `{includeFutureJobs: true}`
+By default, `runJobs` runs jobs that are scheduled in the past or present. If you want to include future jobs you may pass an option for `{includeFutureJobs: true}`
 
-```ts twoslash
-// @noErrors
+```ts
 // Will run all jobs on this queue, including ones with scheduledAt in the future
-await sidetrack.runQueue("userOnboarding", {includeFutureJobs: true}); 
+await sidetrack.runJobs(
+  { queue: "userOnboarding" },
+  { includeFutureJobs: true },
+);
 ```
-
 
 ## Listing jobs
 
 You may want to assert that certain jobs exist on a queue(s).
-listJob accepts a single queue or list of queues, and returns a list of jobs.
+`listJob` accepts a single queue or list of queues, and returns a list of jobs.
 
-```ts twoslash
-// @noErrors
-
-await sidetrack.insert("userOnboarding", {email: "a@example.com"}); 
-await sidetrack.insert("userOnboarding", {email: "b@example.com"}); 
+```ts
+await sidetrack.insert("userOnboarding", { email: "a@example.com" });
+await sidetrack.insert("userOnboarding", { email: "b@example.com" });
 
 // You can run jobs on a single queue
-const jobs = await sidetrack.listJobs("userOnboarding"); 
-expect(jobs.length).toBe(2)
+const jobs = await sidetrack.listJobs({ queue: "userOnboarding" });
+expect(jobs.length).toBe(2);
 ```
-
 
 ## Listing job statuses
 
-listJobStatuses provides a convenient way to know the breadown of all the jobs and their statuses.
+`listJobStatuses` provides a convenient way to know the breakdown of all the jobs and their statuses.
 
-```ts twoslash
-// @noErrors
-
-const job1 = await sidetrack.insert("userOnboarding", {email: "a@example.com"}); 
-await sidetrack.insert("userOnboarding", {email: "b@example.com"}); 
-await sidetrack.runJob(job1.id); 
+```ts
+const job1 = await sidetrack.insert("userOnboarding", {
+  email: "a@example.com",
+});
+await sidetrack.insert("userOnboarding", { email: "b@example.com" });
+await sidetrack.runJob(job1.id);
 
 // we should expect 1 job to be in completed, another job to be in scheduled
-const jobs = await sidetrack.listJobsStatuses("userOnboarding"); 
-expect(jobs).toBeObject({scheduled: 1, completed: 1})
+const jobs = await sidetrack.listJobsStatuses("userOnboarding");
+expect(jobs).toBeObject({ scheduled: 1, completed: 1 });
 ```

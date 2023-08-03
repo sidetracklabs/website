@@ -1,8 +1,12 @@
 {
   "index": "Introduction",
   "why-sidetrack": "Why Sidetrack?",
-  "quickstart": "Quick Start",
-  "custom-db-client": "Custom Database Clients",
+  "quickstart": "Quickstart",
+  "contact": {
+    "title": "Reference Docs ↗",
+    "href": "https://sidetracklabs.github.io/sidetrack/",
+    "newWindow": true
+  },
   "-Sections": {
     "title": "Sections",
     "type": "separator"

@@ -1,8 +1,11 @@
+import { Callout } from "nextra/components";
+
 ## Using Effect-TS?
 
 If you are using [Effect-TS](https://effect.website), Sidetrack exports an `Effect`-based API as well.
 
 ```ts twoslash
+// @noErrors
 import * as Effect from "@effect/io/Effect";
 import { createSidetrackServiceTag, makeLayer } from "sidetrack/effect";
 
@@ -27,9 +30,17 @@ const sidetrackLayer = makeLayer<Queues>({
 
 const program = Effect.runPromise(
   Effect.flatMap(SidetrackService, (sidetrack) =>
-    sidetrack.insertJob("userOnboarding", { email: "hello@example.com" })
-  ).pipe(Effect.provideLayer(sidetrackLayer))
+    sidetrack.insertJob("userOnboarding", { email: "hello@example.com" }),
+  ).pipe(Effect.provideLayer(sidetrackLayer)),
 );
 ```
 
-You can find the remaining reference documentation for the Effect docs [here](https://sidetracklabs.github.io/sidetrack/modules/sidetrack.effect.html). The functions are similar to the ones in the class-based API, but they return Effects instead of Promises, with some error handling. Over time, the Effect API might be expanded to include more features.
+<Callout type="warning" emoji="⚠️">
+  If you are using `moduleResolution: node` in your TSConfig, you will need to
+  use `import {SidetrackEffect} from "sidetrack"` and access the methods on that
+  export (e.g. `SidetrackEffect.makeLayer`).
+</Callout>
+
+You can find the remaining reference documentation for the Effect docs [here](https://sidetracklabs.github.io/sidetrack/modules/sidetrack.effect.html). The functions are similar to the ones in the class-based API, but they return Effects instead of Promises, with some error handling. Over time, the Effect API might be expanded to include more features. Please open an issue if you have any requests for how we can make the API more ergonomic or "Effectful."
+
+The test utils mentioned in the [Testing Sidetrack](/guides/testing-sidetrack) section can also be found under the `testUtils` key in the sidetrack service. For example, you can do `sidetrack.testUtils.runJob` in the example above.

@@ -1,8 +1,10 @@
+import { Callout } from "nextra/components";
+
 # Quickstart
 
 In this tutorial, you'll learn how to add Sidetrack to your project and run your first job.
 
-1. Install using npm
+1. Install using your package manager of choice.
 
 ```bash filename="Terminal"
 npm install sidetrack
@@ -27,7 +29,11 @@ const sidetrack = new Sidetrack<{
     });
 ```
 
-2. Import it into your project, and initialize Sidetrack by defining your queues
+2. Import it into your project, and initialize Sidetrack by defining your queues.
+
+<Callout type="warning" emoji="⚠️">
+  Please note that we only support PostgreSQL at the moment.
+</Callout>
 
 ```ts twoslash
 // @include: main

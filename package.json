@@ -8,13 +8,19 @@
     "url": "git+https://github.com/sidetracklabs/website.git"
   },
   "scripts": {
-    "build": "next build && touch out/.nojekyll",
+    "build": "next build && next-sitemap && touch out/.nojekyll",
     "build-and-deploy": "pnpm run build && pnpm run deploy-website",
     "deploy-website": "gh-pages -d out -t true",
     "dev": "next dev",
     "format": "prettier --write .",
-    "lint": "next lint",
-    "start": "next start"
+    "lint": "eslint . --ext mdx,md,js,jsx,ts,tsx",
+    "start": "next start",
+    "prepare": "husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
   },
   "dependencies": {
     "next": "13.4.10",
@@ -27,15 +33,24 @@
     "vitest": "^0.34.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
     "@effect/io": "^0.37.1",
     "@mdx-js/mdx": "2.3.0",
     "@sidetrack/client-prisma": "^0.0.8",
     "@types/node": "20.4.5",
     "@types/pg": "^8.10.2",
     "autoprefixer": "^10.4.14",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.7.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-mdx": "^2.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "gh-pages": "5.0.0",
+    "husky": "^8.0.0",
+    "next-sitemap": "^4.1.8",
     "pg": "^8.11.2",
     "postcss": "8.4.27",
     "prettier": "3.0.0",

@@ -1,21 +1,16 @@
-import { Callout } from "nextra/components";
-
 # Working with Types
 
-Typing the queues and handlers will help prevent you from misusing Sidetrack, like inserting a job on a nonexistent queue, or inserting a job with an invalid payload. Types can improve your developer experience.
+Typing the queues and handlers will help prevent you from misusing Sidetrack, like inserting a job on a nonexistent queue, or inserting a job with an invalid payload. Following the types will improve your developer experience.
 
-To get started, pass your type generic to Sidetrack. The generic is an object with keys that match your queue names, and values that are the type of the payload for that queue. For example, if you have a queue called userOnboarding, and the payload is an object with an email property, you can type your queues like this:
+To get started, pass in the type for Sidetrack's constructor. This type is an object with keys that match your queue names, and values that are the type of the payload for that queue. For example, if you have a queue called userOnboarding, and the payload is an object with an email property, you can type your queues like this:
 
-```ts twoslash
-// @noErrors
-new Sidetrack<
-  userOnboarding: { email: string };
->(
-  /* excluding for brevity */
-);
+```ts
+new Sidetrack<{ userOnboarding: { email: string } }>();
 ```
 
-Notice the type generic passed above. Here is the full example:
+The type of your payload must only use JSON serializable values, since the job payload will be persisted in the DB as `JSONB`.
+
+Here is the full example:
 
 ```twoslash include main
 import { Sidetrack } from "sidetrack";
@@ -35,6 +30,11 @@ const sidetrack = new Sidetrack<{
   },
 });
 ```
+
+```ts twoslash
+// @include: main
+```
+
 Notice how the handler function receives a job. This job contains a `payload` key which will be typed to match your payload types above. The job also contains other fields you can use in your handler function (e.g. the job's id, scheduledAt, status, currentAttempt, etc.)
 
 ## Avoiding errors
@@ -45,7 +45,7 @@ You can insert a job on only the userOnboarding queue. Notice the type error if 
 // @include: main
 // ---cut---
 // @errors: 2345
-sidetrack.insertJob("reports", { email: "a@example.com"})
+sidetrack.insertJob("reports", { email: "a@example.com" });
 ```
 
 Types also prevent you from inserting a job with incorrect payload. Notice I must pass a email of type string.
@@ -57,5 +57,31 @@ Types also prevent you from inserting a job with incorrect payload. Notice I mus
 sidetrack.insertJob("userOnboarding", { phone: "11111111111" });
 ```
 
+## Reusable Types
 
-The type of your payload must only use JSON seriazable values, since the job payload will be persisted in the DB as JSONB.
+Sidetrack exports most of the types it uses internally, so you can easily type your handlers and queues. For example, if you have a queue called `userOnboarding`, you can type your handler like this:
+
+```ts twoslash
+import { Sidetrack, SidetrackQueues } from "sidetrack";
+
+type QueueNamesAndPayloads = {
+  userOnboarding: { email: string };
+};
+
+const queues: SidetrackQueues<QueueNamesAndPayloads> = {
+  userOnboarding: {
+    handler: async (job) => {
+      console.log(`Welcome ${job.payload.email}`);
+    },
+  },
+};
+
+const sidetrack = new Sidetrack<QueueNamesAndPayloads>({
+  databaseOptions: {
+    connectionString: process.env["DATABASE_URL"]!,
+  },
+  queues,
+});
+```
+
+Notice how the `SidetrackQueues` helper type lets you type your queues before you pass them in to the constructor, so you can also re-use them.

@@ -1,6 +1,8 @@
 ## Insert a job within a transaction
 
-One huge advantage of being a database-backed job-queue library is that we can insert jobs transactionally! This means that if you are in the middle of a transaction and your transaction fails, you can roll back. The following is an example of how to insert a job transactionally with the sidetrack Prisma client wrapper:
+One huge advantage of being a database-backed library is that we can insert jobs transactionally! This means that if you are in the middle of a transaction and your transaction fails, you can roll back.
+
+The following is an example of how to insert a job transactionally with the sidetrack Prisma client wrapper:
 
 ```ts twoslash
 // @noErrors
@@ -33,7 +35,7 @@ prisma.$transaction(async (prismaTx) => {
     {
       email: "hello@example.com",
     },
-    { databaseClient: makePrismaSidetrackClient(prismaTx) }
+    { databaseClient: makePrismaSidetrackClient(prismaTx) },
   );
 });
 
@@ -44,7 +46,7 @@ prisma.$transaction(async (prismaTx) => {
     {
       email: "second@example.com",
     },
-    { databaseClient: makePrismaSidetrackClient(prismaTx) }
+    { databaseClient: makePrismaSidetrackClient(prismaTx) },
   );
   // this causes the transaction to rollback
   throw new Error("Something went wrong");

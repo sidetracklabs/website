@@ -1,13 +1,11 @@
-# Why Sidetrack?
-
 ## Motivation
 
-Putting a job queue in a database sometimes gets a bad rap. It's often said that databases are not suited for queueing, or that they aren't scalable. We've found that a database-backed job queue can get you really far, and it's a great choice for a lot of new applications. We've used database-backed background job libraries in production for years, and have found that many of the recommendations given about job queue tools may only be necessary at a certain scale, much larger than your typical app.
+Putting a job queue in a database sometimes gets a bad rap. It's often said that databases are not suited for this, or that they aren't scalable. We've found that a database-backed job queue can get you really far, and it's a great choice for a lot of new applications. We've used database-backed background job libraries in production for years, and have found that many of the recommendations given about additional job processing tools may only be necessary at a certain scale, much larger than your typical app.
 
-After working on a handful of applications, we couldn't find a library in the TypeScript/JavaScript ecosystem for working with background jobs that was database-backed and TypeScript-first. The most popular job processing libraries in the ecosystem use Redis, which is a great tool, but we wanted to use a database that we were already using in our applications. We wanted to be able to use TypeScript to define our jobs and have a great developer experience. Additionally, databases allow for transactional guarantees, so we can avoid inserting jobs into the queue if the transaction fails.
+After working on a handful of applications, we couldn't find a library in the TypeScript/JavaScript ecosystem for working with background jobs that was database-backed and TypeScript-first. The most popular job processing libraries in the ecosystem use Redis, which is a great tool, but we wanted to use a database that we were already using in our applications. We wanted to be able to use TypeScript to define our jobs and have a great developer experience. Additionally, databases allow for **transactional guarantees**, so we can avoid inserting jobs into the queue if the transaction fails.
 
-Our focus is on relational databases, namely PostgreSQL, but we are open to supporting other relational databases in the future. This would make Sidetrack the first database-backed job processing library in the Node.js ecosystem that we know of to support more than one database (i.e. PostgreSQL).
+Our focus is on **relational databases**, namely PostgreSQL, but we are open to supporting other relational databases in the future. This would make Sidetrack the first database-backed job processing library in the Node.js ecosystem that we know of to support more than one database (i.e. PostgreSQL).
 
-We also love using [Effect-TS](https://effect.website/), and had to create internal wrappers around other libraries to make them work with Effect-TS. We wanted to create a library that was built with Effect in mind, and that would allow us to use Effect.
+We also love using [Effect-TS](https://effect.website/), and had to create internal wrappers around other libraries to make them work with Effect. We wanted to create a library that was built with Effect in mind, and that would allow us to use Effect.
 
 This is the first open-source project we've worked on together, and we're excited to share it with you!

@@ -1,14 +1,13 @@
-import { Callout } from "nextra/components";
-
 # Configuring Queues
 
 When specifying a queue, you can optionally pass a `options` object to customize the queue's behavior.
-There's currently only 1 options you can customize:
+There's currently only 1 option you can customize:
 
-1. maxAttempts - Default is 1. Increasing this means your job will be retried until currentAttempt \<= maxAttempts.
+1. `maxAttempts` - Default is 1. Increasing this means your job will be retried until `currentAttempt <= maxAttempts`.
+
 ## maxAttempts
 
-By increasing the maxAttempts for a job, you are allowing the job to be retried in the future. All jobs have a default maxAttempts of 1, so if you want a job to run at most 5 times before being marked as failed, you can set maxAttempts to 5.
+By increasing the `maxAttempts` for a job, you are allowing the job to be retried in the future. All jobs have a default `maxAttempts` of 1, so if you want a job to run at most 5 times before being marked as failed, you can set maxAttempts to 5.
 
 ```ts twoslash
 import { Sidetrack } from "sidetrack";
@@ -35,7 +34,8 @@ sidetrack.start();
 
 sidetrack.insertJob("userOnboarding", { email: "a@example.com" });
 ```
-This job will fail on the first run, and move to retrying status since its currentAttempt (1) \<= 5. After 5 attempts, the job will transition to failed.
+
+This job will fail on the first run, and move to retrying status since its `currentAttempt` (1) is less than 5. After 5 attempts, the job will transition to a status of `failed`.
 
 ## uniqueOn
 
@@ -44,4 +44,3 @@ This job will fail on the first run, and move to retrying status since its curre
 
 You can enforce job uniqueness in the following ways:
 payloadKeys, scheduledAt, status
-

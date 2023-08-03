@@ -1,10 +1,6 @@
 # Docs
 
-Sidetrack labs docs based on Nextra
-
-## Quick Start
-
-Clone this repo.
+Sidetrack docs
 
 ## Local Development
 

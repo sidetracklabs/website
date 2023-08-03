@@ -1,22 +1,18 @@
-import { Callout } from "nextra/components";
-
 # Error and Logging
 
 Whenever Sidetrack encounters an unhandled exception while running your job, the error and stack trace will be appended to the `errors` field for that job, and the job will be marked as failed (or retrying if more attempts are available).
 
 While you can always refer to the `errors` field on the job to see what went wrong, you should consider adding logs.
 
-
 ```ts twoslash
 // @noErrors
 import { Sidetrack, SidetrackJobWithPayload } from "sidetrack";
 
-
-const onboardUser = async (job: SidetrackJobWithPayload<{email: string}>) => {
+const onboardUser = async (job: SidetrackJobWithPayload<{ email: string }>) => {
   try {
     // do something
   } catch (error) {
-    logger.error("Job ${job.id} failed");
+    logger.error(`Job ${job.id} failed`);
     // does this error need to be serialized?
     logger.error(error);
     throw error;
@@ -38,7 +34,4 @@ const sidetrack = new Sidetrack<{
     },
   },
 });
-
 ```
-
-TODO: Should we show what the error looks like in the database?
