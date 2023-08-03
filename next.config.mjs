@@ -26,6 +26,7 @@ const withNextra = nextra({
             types: ["node"],
             moduleResolution: 100, // bundler
             module: 99, // esnext
+            strict: true,
           },
           themes: ["dark-plus", "light-plus"],
         },
