@@ -3,8 +3,8 @@
 If you are using [Effect-TS](https://effect.website), Sidetrack exports an `Effect`-based API as well.
 
 ```ts twoslash
-import { makeLayer, createSidetrackServiceTag } from "sidetrack/effect";
 import * as Effect from "@effect/io/Effect";
+import { createSidetrackServiceTag, makeLayer } from "sidetrack/effect";
 
 type Queues = {
   userOnboarding: { email: string };

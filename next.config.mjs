@@ -3,6 +3,15 @@ import nextra from "nextra";
 import rehypeRaw from "rehype-raw";
 import remarkShikiTwoslash from "remark-shiki-twoslash";
 
+// import ts from "typescript";
+
+// const { options } = ts.convertCompilerOptionsFromJson(
+//   { module: "ESNext" },
+//   "."
+// );
+
+// console.log("OPTIONS", options);
+
 const withNextra = nextra({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.tsx",
@@ -14,6 +23,8 @@ const withNextra = nextra({
         {
           defaultCompilerOptions: {
             types: ["node"],
+            moduleResolution: 100, // bundler
+            module: 99, // esnext
           },
           themes: ["dark-plus", "light-plus"],
         },

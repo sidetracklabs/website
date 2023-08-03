@@ -24,8 +24,8 @@ dependencies:
     specifier: 0.32.4
     version: 0.32.4
   sidetrack:
-    specifier: ^0.0.7
-    version: 0.0.7
+    specifier: ^0.0.8
+    version: 0.0.8
 
 devDependencies:
   '@effect/io':
@@ -35,8 +35,8 @@ devDependencies:
     specifier: 2.3.0
     version: 2.3.0
   '@sidetrack/client-prisma':
-    specifier: ^0.0.7
-    version: 0.0.7(@prisma/client@5.1.0)
+    specifier: ^0.0.8
+    version: 0.0.8(@prisma/client@5.1.0)
   '@types/node':
     specifier: 20.4.5
     version: 20.4.5
@@ -463,8 +463,8 @@ packages:
     resolution: {integrity: sha512-V+MvGwaHH03hYhY+k6Ef/xKd6RYlc4q8WBx+2ANmipHJcKuktNcI/NgEsJgdSUF6Lw32njT6OnrRsKYCdgHjYw==}
     dev: true
 
-  /@sidetrack/client-prisma@0.0.7(@prisma/client@5.1.0):
-    resolution: {integrity: sha512-XzladVHctH9ujJLj6A0ucwMBScmx/hL0l65y/8+kiM1+yWOzYyGG15VDwzGp9eOYrl2FeCGGcGZC6HMK495gPw==}
+  /@sidetrack/client-prisma@0.0.8(@prisma/client@5.1.0):
+    resolution: {integrity: sha512-LNPpbA4fTIPZr7N/fBGBqPSHhcxHVjUhVKWqnAUC3qLzspGrPPYd2I4zdCnnKsFpq4NQeQ78yKJh6jzOlDFHlw==}
     peerDependencies:
       '@prisma/client': '>= 4'
     dependencies:
@@ -472,8 +472,8 @@ packages:
       uuid: 9.0.0
     dev: true
 
-  /@sidetrack/pg-migrate@0.0.4(pg@8.11.2):
-    resolution: {integrity: sha512-CN5ZaMzZdQeuo6WzlwSh/RpWvz2Y+hoyM0iZSioc+aq29timKLZMgcpi6f/bYATG+H6N1v0rAbPXgaqkQda5IQ==}
+  /@sidetrack/pg-migrate@0.0.5(pg@8.11.2):
+    resolution: {integrity: sha512-v+GEciadGZgePzVm9UY4LRwa8IVVuC3sGs6tc/wUM2GQnsOnqevyP/Jp0KLMVAO39XWFyw1cDEvE20UojV2dmQ==}
     peerDependencies:
       pg: '>=4.3.0 <9.0.0'
     dependencies:
@@ -4620,12 +4620,12 @@ packages:
       object-inspect: 1.12.3
     dev: true
 
-  /sidetrack@0.0.7:
-    resolution: {integrity: sha512-9Dg1E023eBduEfA+0WoBDkctrJ8TLg9rg07fUOA71sc1dGyhH8N0sDAfExvnmrkAzWp4nx+dTY32rdYYBKe/bg==}
+  /sidetrack@0.0.8:
+    resolution: {integrity: sha512-IWBe0Kiw7VJp/BlWubtcqQ8Ro4//IRTJYsKb7vEO+S0B+r9CP7Z64SvZ+yvh7GFZ6HM+1JrDUU+RGsbQo0HPSA==}
     dependencies:
       '@effect/data': 0.17.1
       '@effect/io': 0.37.1
-      '@sidetrack/pg-migrate': 0.0.4(pg@8.11.2)
+      '@sidetrack/pg-migrate': 0.0.5(pg@8.11.2)
       pg: 8.11.2
     transitivePeerDependencies:
       - pg-native
