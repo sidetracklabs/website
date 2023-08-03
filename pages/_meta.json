@@ -3,21 +3,21 @@
   "why-sidetrack": "Why Sidetrack?",
   "quickstart": "Quick Start",
   "custom-db-client": "Custom Database Clients",
-  "-Guides": {
-    "title": "Guides",
+  "-Sections": {
+    "title": "Sections",
     "type": "separator"
   },
-  "~examples": {
-    "title": "Examples",
+  "guides": {
+    "title": "Guides"
+  },
+  "examples": {
+    "title": "Examples"
+  },
+  "blog": {
+    "title": "Blog",
     "type": "page",
     "theme": {
-      "layout": "full"
+      "typesetting": "article"
     }
-  },
-  "contact": {
-    "title": "Contact ↗",
-    "type": "page",
-    "href": "mailto:contact@sidetrack.run",
-    "newWindow": true
   }
 }

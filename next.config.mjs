@@ -15,6 +15,7 @@ import remarkShikiTwoslash from "remark-shiki-twoslash";
 const withNextra = nextra({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.tsx",
+  defaultShowCopyCode: true,
   mdxOptions: {
     rehypePlugins: [[rehypeRaw, { passThrough: nodeTypes }]],
     remarkPlugins: [
