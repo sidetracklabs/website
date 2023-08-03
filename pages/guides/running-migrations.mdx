@@ -1,0 +1,14 @@
+# Running migrations
+
+Migrations will automatically be run when you call `sidetrack.start()`.
+The migrations creates a `sidetrack_job` table in your database, under the `sidetrack` schema.
+
+If you want to manually run the migrations, call `runMigrations` with your database connection string.
+
+```ts twoslash
+// @noErrors
+import { runMigrations } from "sidetrack";
+
+await runMigrations(process.env["DATABASE_URL"]!);
+```
+
