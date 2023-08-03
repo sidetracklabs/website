@@ -20,7 +20,7 @@ const sidetrack = new Sidetrack<{
       queues: {
         userOnboarding: {
           handler: async (job) => {
-            console.log("Welcome ${job.payload.email}")
+            console.log(`Welcome ${job.payload.email}`)
           },
         },
       },
@@ -45,13 +45,13 @@ To insert a job, use the insertJob function to specify the queue and the job pay
 sidetrack.insertJob("userOnboarding", { email: "a@example.com" });
 ```
 
-Once the job is inserted, Sidetrack will pick it up and run it. You should see a log in your terminal! 
-```console 
+Once the job is inserted, Sidetrack will pick it up and run it. You should see a log in your terminal!
+
+```console
 Hello a@example.com!
 ```
 
 You are ready to continue your sidetrack journey! Good luck and don't get sidetracked!
-
 
 ## More on types
 
@@ -63,4 +63,3 @@ Notice how the types you defined above prevent you from inserting an invalid job
 // @errors: 2345
 sidetrack.insertJob("userOnboarding", { phone: "11111111111" });
 ```
-

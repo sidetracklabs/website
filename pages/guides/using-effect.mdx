@@ -1,0 +1,35 @@
+## Using Effect-TS?
+
+If you are using [Effect-TS](https://effect.website), Sidetrack exports an `Effect`-based API as well.
+
+```ts twoslash
+import { makeLayer, createSidetrackServiceTag } from "sidetrack/effect";
+import * as Effect from "@effect/io/Effect";
+
+type Queues = {
+  userOnboarding: { email: string };
+};
+
+const SidetrackService = createSidetrackServiceTag<Queues>();
+
+const sidetrackLayer = makeLayer<Queues>({
+  databaseOptions: {
+    connectionString: process.env["DATABASE_URL"]!,
+  },
+  queues: {
+    userOnboarding: {
+      handler: async (job) => {
+        console.log(`Welcome ${job.payload.email}`);
+      },
+    },
+  },
+});
+
+const program = Effect.runPromise(
+  Effect.flatMap(SidetrackService, (sidetrack) =>
+    sidetrack.insertJob("userOnboarding", { email: "hello@example.com" })
+  ).pipe(Effect.provideLayer(sidetrackLayer))
+);
+```
+
+You can find the remaining reference documentation for the Effect docs [here](https://sidetracklabs.github.io/sidetrack/modules/sidetrack.effect.html). The functions are similar to the ones in the class-based API, but they return Effects instead of Promises, with some error handling. Over time, the Effect API might be expanded to include more features.

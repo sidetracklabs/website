@@ -1,0 +1,62 @@
+import { Callout } from "nextra/components";
+
+# Custom database client
+
+## Included clients
+
+We have support for two clients out of the box:
+
+1. [pg](https://npmjs.com/package/pg)
+
+2. [prisma](https://npmjs.com/package/prisma)
+
+The `pg` client can be imported `sidetrack` package and used as follows:
+
+```ts twoslash
+import { makePgSidetrackClient, Sidetrack } from "sidetrack";
+// TODO replace this with pool once we fix the type in sidetrack
+import { Client } from "pg";
+
+// You can also use a pg.Client instead of a pg.Pool
+const pool = new Client();
+
+const sidetrack = new Sidetrack<{
+  userOnboarding: { email: string };
+}>({
+  databaseOptions: {
+    connectionString: process.env["DATABASE_URL"]!,
+  },
+  queues: {
+    userOnboarding: {
+      handler: async (job) => {
+        console.log(`Welcome ${job.payload.email}`);
+      },
+    },
+  },
+  // This will apply to all methods available on sidetrack
+  databaseClient: makePgSidetrackClient(pool),
+});
+
+// You can also override the connection per method
+sidetrack.insertJob(
+  "userOnboarding",
+  { email: "hello@example.com" },
+  {
+    databaseClient: makePgSidetrackClient(pool),
+  }
+);
+```
+
+Similarly, the @sidetrack/client-prisma package exposes a `makePrismaSidetrackClient` function that can be used to create a client that works with prisma. You can find the documentation for it [here](https://sidetracklabs.github.io/sidetrack/functions/_sidetrack_client_prisma.makePrismaSidetrackClient.html).
+
+<Callout>
+  With this custom client, you can now run most of the functions that are
+  available within the `Sidetrack` class in a transaction. Pass in a client
+  that's running within a transaction, and it "just works"!
+</Callout>
+
+## Creating your own client
+
+Sidetrack is designed to support working with your database library of choice, as long as it works with the databases that are supported by sidetrack. To do this, you need to implement the `SidetrackDatabaseClient` interface, which you can find [here](https://sidetracklabs.github.io/sidetrack/interfaces/sidetrack.index.SidetrackDatabaseClient.html). It currently has one method called `execute`.
+
+For example, you can find the implementation of the `makePgSidetrackClient` function [here](https://github.com/sidetracklabs/sidetrack/blob/main/packages/sidetrack/src/client.ts#L18)

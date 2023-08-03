@@ -2,13 +2,17 @@
   "index": "Introduction",
   "why-sidetrack": "Why Sidetrack?",
   "quickstart": "Quick Start",
+  "custom-db-client": "Custom Database Clients",
   "-Guides": {
     "title": "Guides",
     "type": "separator"
   },
-  "examples": {
+  "~examples": {
     "title": "Examples",
-    "type": "page"
+    "type": "page",
+    "theme": {
+      "layout": "full"
+    }
   },
   "contact": {
     "title": "Contact ↗",
