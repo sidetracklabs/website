@@ -27,7 +27,7 @@ const config: DocsThemeConfig = {
       <meta property="og:title" content="Sidetrack" />
       <meta
         property="og:description"
-        content="An open source, database-backed, typescript-first background job library."
+        content="An open source, PostgreSQL-backed, typescript-first background job library."
       />
       <link
         rel="apple-touch-icon"
