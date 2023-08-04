@@ -92,7 +92,8 @@ const job1 = await sidetrack.insert("userOnboarding", {
 await sidetrack.insert("userOnboarding", { email: "b@example.com" });
 await sidetrack.runJob(job1.id);
 
-// we should expect 1 job to be in completed, another job to be in scheduled
+// since we only ran job 1
+// we should expect 1 job to be completed, 1 job to be in scheduled
 const jobs = await sidetrack.listJobsStatuses("userOnboarding");
 expect(jobs).toBeObject({ scheduled: 1, completed: 1 });
 ```

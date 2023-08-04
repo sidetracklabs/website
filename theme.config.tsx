@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { DocsThemeConfig } from "nextra-theme-docs";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 import { useRouter } from "next/router";
 
 const config: DocsThemeConfig = {

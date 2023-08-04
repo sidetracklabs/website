@@ -22,7 +22,7 @@ const sidetrack = new Sidetrack<{
       queues: {
         userOnboarding: {
           handler: async (job) => {
-            console.log(`Welcome ${job.payload.email}`)
+            console.log(`Welcome ${job.payload.email}!`)
           },
         },
       },
@@ -54,7 +54,7 @@ sidetrack.insertJob("userOnboarding", { email: "a@example.com" });
 Once the job is inserted, Sidetrack will pick it up and run it. You should see a log in your terminal!
 
 ```console
-Hello a@example.com!
+Welcome a@example.com!
 ```
 
 You are ready to continue your Sidetrack journey! Good luck (and don't get sidetracked)!

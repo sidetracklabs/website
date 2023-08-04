@@ -2,11 +2,7 @@
   "index": "Introduction",
   "why-sidetrack": "Why Sidetrack?",
   "quickstart": "Quickstart",
-  "contact": {
-    "title": "Reference Docs ↗",
-    "href": "https://sidetracklabs.github.io/sidetrack/",
-    "newWindow": true
-  },
+
   "-Sections": {
     "title": "Sections",
     "type": "separator"
@@ -23,5 +19,10 @@
     "theme": {
       "typesetting": "article"
     }
+  },
+  "contact": {
+    "title": "Reference Docs ↗",
+    "href": "https://sidetracklabs.github.io/sidetrack/",
+    "newWindow": true
   }
 }

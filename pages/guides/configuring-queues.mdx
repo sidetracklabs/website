@@ -1,7 +1,7 @@
 # Configuring Queues
 
-When specifying a queue, you can optionally pass a `options` object to customize the queue's behavior.
-There's currently only 1 option you can customize:
+When specifying a queue, you can optionally pass an `options` object to customize the queue's behavior.
+There's currently 1 option you can customize:
 
 1. `maxAttempts` - Default is 1. Increasing this means your job will be retried until `currentAttempt <= maxAttempts`.
 
@@ -25,6 +25,7 @@ const sidetrack = new Sidetrack<{
       },
       options: {
         maxAttempts: 5,
+        // ^?
       },
     },
   },
@@ -35,12 +36,4 @@ sidetrack.start();
 sidetrack.insertJob("userOnboarding", { email: "a@example.com" });
 ```
 
-This job will fail on the first run, and move to retrying status since its `currentAttempt` (1) is less than 5. After 5 attempts, the job will transition to a status of `failed`.
-
-## uniqueOn
-
-2. uniqueOn - Used to enforce uniqueness before inserting a job on the queue.
-3. backoff - The strategy used for retrying jobs. Default is exponential backoff inspired by Resque.
-
-You can enforce job uniqueness in the following ways:
-payloadKeys, scheduledAt, status
+This job will fail on the first run then move to `retrying` status since its `currentAttempt` (1) is less than 5. After 5 attempts, the job will transition to a status of `failed`.

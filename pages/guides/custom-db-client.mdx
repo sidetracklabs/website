@@ -4,21 +4,20 @@ import { Callout } from "nextra/components";
 
 ## Included clients
 
-We have support for two clients out of the box:
+We have support for two clients:
 
-1. [pg](https://npmjs.com/package/pg)
+1. [pg](https://npmjs.com/package/pg) (included with `sidetrack`)
 
-2. [prisma](https://npmjs.com/package/prisma)
+2. [prisma](https://npmjs.com/package/prisma) (install `@sidetrack/client-prisma`)
 
-The `pg` client can be imported `sidetrack` package and used as follows:
+The `pg` client can be used as follows:
 
 ```ts twoslash
-import { makePgSidetrackClient, Sidetrack } from "sidetrack";
-// TODO replace this with pool once we fix the type in sidetrack
-import { Client } from "pg";
+import { usePg, Sidetrack } from "sidetrack";
+import { Pool } from "pg";
 
 // You can also use a pg.Client instead of a pg.Pool
-const pool = new Client();
+const pool = new Pool();
 
 const sidetrack = new Sidetrack<{
   userOnboarding: { email: string };
@@ -34,7 +33,7 @@ const sidetrack = new Sidetrack<{
     },
   },
   // This will apply to all methods available on sidetrack
-  databaseClient: makePgSidetrackClient(pool),
+  dbClient: usePg(pool),
 });
 
 // You can also override the connection per method
@@ -42,12 +41,12 @@ sidetrack.insertJob(
   "userOnboarding",
   { email: "hello@example.com" },
   {
-    databaseClient: makePgSidetrackClient(pool),
+    dbClient: usePg(pool),
   },
 );
 ```
 
-Similarly, the `@sidetrack/client-prisma` package exposes a `makePrismaSidetrackClient` function that can be used to create a client that works with prisma. You can find the documentation for it [here](https://sidetracklabs.github.io/sidetrack/functions/_sidetrack_client_prisma.makePrismaSidetrackClient.html).
+Similarly, the `@sidetrack/client-prisma` package exposes a `usePrisma` function that can be used to create a client that works with prisma. You can find the documentation for it [here](https://sidetracklabs.github.io/sidetrack/functions/_sidetrack_client_prisma.usePrisma.html).
 
 <Callout>
   With this custom client, you can now run most of the functions that are
@@ -57,6 +56,6 @@ Similarly, the `@sidetrack/client-prisma` package exposes a `makePrismaSidetrack
 
 ## Creating your own client
 
-Sidetrack is designed to support working with your database library of choice, as long as it works with the databases that are supported by sidetrack. To do this, you need to implement the `SidetrackDatabaseClient` interface, which you can find [here](https://sidetracklabs.github.io/sidetrack/interfaces/sidetrack.index.SidetrackDatabaseClient.html). It currently has one method called `execute`.
+Sidetrack is designed to support working with your database client library of choice, as long as it works with the databases that are supported by sidetrack. To do this, you need to implement the `SidetrackDatabaseClient` interface, which you can find [here](https://sidetracklabs.github.io/sidetrack/interfaces/sidetrack.index.SidetrackDatabaseClient.html). It currently has one method called `execute`.
 
-For example, you can find the implementation of the `makePgSidetrackClient` function [here](https://github.com/sidetracklabs/sidetrack/blob/main/packages/sidetrack/src/client.ts#L18)
+For example, you can find the implementation of the `usePg` function [here](https://github.com/sidetracklabs/sidetrack/blob/main/packages/sidetrack/src/client.ts#L18)

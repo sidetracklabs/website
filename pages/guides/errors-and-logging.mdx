@@ -12,9 +12,7 @@ const onboardUser = async (job: SidetrackJobWithPayload<{ email: string }>) => {
   try {
     // do something
   } catch (error) {
-    logger.error(`Job ${job.id} failed`);
-    // does this error need to be serialized?
-    logger.error(error);
+    logger.error(`Job ${job.id} failed`, error);
     throw error;
   }
 };
@@ -28,9 +26,6 @@ const sidetrack = new Sidetrack<{
   queues: {
     userOnboarding: {
       handler: onboardUser,
-      options: {
-        maxAttempts: 5,
-      },
     },
   },
 });

@@ -5,7 +5,9 @@ Typing the queues and handlers will help prevent you from misusing Sidetrack, li
 To get started, pass in the type for Sidetrack's constructor. This type is an object with keys that match your queue names, and values that are the type of the payload for that queue. For example, if you have a queue called userOnboarding, and the payload is an object with an email property, you can type your queues like this:
 
 ```ts
-new Sidetrack<{ userOnboarding: { email: string } }>();
+type QueueNamesAndPayloads = {
+  userOnboarding: { email: string };
+};
 ```
 
 The type of your payload must only use JSON serializable values, since the job payload will be persisted in the DB as `JSONB`.
@@ -15,9 +17,11 @@ Here is the full example:
 ```twoslash include main
 import { Sidetrack } from "sidetrack";
 
-const sidetrack = new Sidetrack<{
+type QueueNamesAndPayloads = {
   userOnboarding: { email: string };
-}>({
+};
+
+const sidetrack = new Sidetrack<QueueNamesAndPayloads>({
   databaseOptions: {
     connectionString: process.env["DATABASE_URL"]!,
   },
