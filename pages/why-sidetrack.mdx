@@ -2,7 +2,7 @@
 
 We've used database-backed background job libraries in production for years, and we've found that they are a great choice for a lot of applications.
 
-After working on a handful of applications, we couldn't find a library in the TypeScript/JavaScript ecosystem for working with background jobs that was database-backed and TypeScript-first. The most popular job processing libraries in the ecosystem use Redis, which is a great tool, but we wanted to use a database that we were already using in our applications. Additionally, databases allow for **transactional guarantees**, so we can avoid inserting jobs into the queue if the transaction fails. We wanted to be able to use TypeScript to define our jobs and have a great developer experience.
+After working on a handful of applications, we felt there was room for improvement with the libraries in the TypeScript/JavaScript ecosystem for working with background jobs. The most popular job processing libraries in the ecosystem use Redis, which is a great tool, but we wanted to use a database that we were already using in our applications. Additionally, databases allow for **transactional guarantees**, so we can avoid inserting jobs into the queue if the transaction fails. We primarily wanted to be able to use TypeScript to work with our background jobs and have a great developer experience.
 
 Our focus is on **relational databases**, namely PostgreSQL, but we are open to supporting other relational databases in the future.
 
