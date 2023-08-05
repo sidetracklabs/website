@@ -24,8 +24,8 @@ dependencies:
     specifier: 0.32.4
     version: 0.32.4
   sidetrack:
-    specifier: ^0.0.12
-    version: 0.0.12
+    specifier: ^0.0.13
+    version: 0.0.13
   vitest:
     specifier: ^0.34.1
     version: 0.34.1
@@ -44,8 +44,8 @@ devDependencies:
     specifier: 2.3.0
     version: 2.3.0
   '@sidetrack/client-prisma':
-    specifier: ^0.0.12
-    version: 0.0.12(@prisma/client@5.1.1)
+    specifier: ^0.0.13
+    version: 0.0.13(@prisma/client@5.1.1)
   '@types/node':
     specifier: 20.4.7
     version: 20.4.7
@@ -994,8 +994,8 @@ packages:
     resolution: {integrity: sha512-V+MvGwaHH03hYhY+k6Ef/xKd6RYlc4q8WBx+2ANmipHJcKuktNcI/NgEsJgdSUF6Lw32njT6OnrRsKYCdgHjYw==}
     dev: true
 
-  /@sidetrack/client-prisma@0.0.12(@prisma/client@5.1.1):
-    resolution: {integrity: sha512-JoWt8L7kI/9FJ5X1QzXzkNZGcqF7wPMDh5snEwC9amaOuy2yJ8v6I+f0rnnVAETk7Cbz3a2qUtF2tCsdIni2cA==}
+  /@sidetrack/client-prisma@0.0.13(@prisma/client@5.1.1):
+    resolution: {integrity: sha512-luZq+oXRofg/6jA/kyOoHyZKpgO34yBPNOsMOFVEHlRmmJCaOy0tiyS9qr4nQdDP6xJuqyCCA05ZXxfY002ysQ==}
     peerDependencies:
       '@prisma/client': '>= 4'
     dependencies:
@@ -6829,8 +6829,8 @@ packages:
       object-inspect: 1.12.3
     dev: true
 
-  /sidetrack@0.0.12:
-    resolution: {integrity: sha512-M+Ar+UQoSNZV+7R6vglNpNGkrsyXWPC8OM1BiQh/rsMQiPLMpOtd9IVe2FotZecRUYjtIyDYIIN8/AJb1DOx5Q==}
+  /sidetrack@0.0.13:
+    resolution: {integrity: sha512-vmA4ZNNWGWdlH8+LuS8NU9vVN/BtdKDmW/SwfA3IeKvyVgCehvxZPvlqColFlp1GbV3gdF/dp9O5Fdjrh6FAzg==}
     dependencies:
       '@effect/data': 0.17.1
       '@effect/io': 0.38.0(@effect/data@0.17.1)
