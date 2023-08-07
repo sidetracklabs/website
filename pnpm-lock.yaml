@@ -38,7 +38,7 @@ devDependencies:
     specifier: ^17.6.7
     version: 17.6.7
   '@effect/io':
-    specifier: ^0.38.0
+    specifier: 0.38.0
     version: 0.38.0(@effect/data@0.17.1)
   '@mdx-js/mdx':
     specifier: 2.3.0
