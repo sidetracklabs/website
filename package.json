@@ -35,7 +35,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
-    "@effect/io": "0.38.2",
+    "@effect/io": "0.39.1",
     "@mdx-js/mdx": "2.3.0",
     "@sidetrack/client-prisma": "0.0.14",
     "@types/node": "20.5.7",
