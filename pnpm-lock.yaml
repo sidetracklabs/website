@@ -38,8 +38,8 @@ devDependencies:
     specifier: 17.7.0
     version: 17.7.0
   '@effect/io':
-    specifier: 0.39.1
-    version: 0.39.1(@effect/data@0.18.3)
+    specifier: 0.40.1
+    version: 0.40.1(@effect/data@0.18.5)
   '@mdx-js/mdx':
     specifier: 2.3.0
     version: 2.3.0
@@ -333,8 +333,8 @@ packages:
     resolution: {integrity: sha512-QCYkLE5Y5Dm5Yax5R3GmW4ZIgTx7W+kSZ7yq5eqQ/mFWa8i4yxbLuu8cudqzdeZtRtTGZKlhDxfFfgVtMywXJg==}
     dev: false
 
-  /@effect/data@0.18.3:
-    resolution: {integrity: sha512-xNG4CwxE758EK0v81EIPnKv9QeU/x9st1Doab/Fjf7sb9V3n55C85aBiKChpKgGD8pKCPHcjGydLsRHVUvzpwg==}
+  /@effect/data@0.18.5:
+    resolution: {integrity: sha512-VFPJ0prGq3eF6/eZYKVI/1IC1purdGJXEHJC1ggKynPko03upjtmeCeCsEyMiY12DzVIAuME425JndiFb7m2xw==}
     dev: true
 
   /@effect/io@0.38.2(@effect/data@0.17.1):
@@ -345,12 +345,12 @@ packages:
       '@effect/data': 0.17.1
     dev: false
 
-  /@effect/io@0.39.1(@effect/data@0.18.3):
-    resolution: {integrity: sha512-ISBX1EYsWdVBMOV3ZmEVtbMW8FyVwmK6K47rx8ztOjMBKS5tfhB4W8iRjyycObvvlolfpIcZuAAPrCW5Tty+4Q==}
+  /@effect/io@0.40.1(@effect/data@0.18.5):
+    resolution: {integrity: sha512-OeMK7JonvW/D6Z377cOsuCSHUbsO9ZkmAIDmzQ1Qffx8+h5yUXRm0htmPwKkxtCHZr2QxyZfSBzxSzrGU7asXQ==}
     peerDependencies:
-      '@effect/data': ^0.18.0
+      '@effect/data': ^0.18.5
     dependencies:
-      '@effect/data': 0.18.3
+      '@effect/data': 0.18.5
     dev: true
 
   /@esbuild/android-arm64@0.18.17:
