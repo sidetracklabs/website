@@ -33,7 +33,7 @@ const sidetrackLayer = makeLayer<Queues>({
 const program = Effect.runPromise(
   Effect.flatMap(SidetrackService, (sidetrack) =>
     sidetrack.insertJob("userOnboarding", { email: "hello@example.com" }),
-  ).pipe(Effect.provideLayer(sidetrackLayer)),
+  ).pipe(Effect.provide(sidetrackLayer)),
 );
 ```
 
