@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://sidetrack.run</loc><lastmod>2023-10-16T18:14:48.988Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/blog</loc><lastmod>2023-10-16T18:14:48.988Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/blog/announcing-sidetrack</loc><lastmod>2023-10-16T18:14:48.988Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/examples/transactional-job-insertion</loc><lastmod>2023-10-16T18:14:48.988Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/guides/configuring-queues</loc><lastmod>2023-10-16T18:14:48.988Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/guides/custom-db-client</loc><lastmod>2023-10-16T18:14:48.988Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/guides/errors-and-logging</loc><lastmod>2023-10-16T18:14:48.988Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/guides/running-migrations</loc><lastmod>2023-10-16T18:14:48.988Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/guides/testing-sidetrack</loc><lastmod>2023-10-16T18:14:48.988Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/guides/using-effect</loc><lastmod>2023-10-16T18:14:48.988Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/guides/working-with-types</loc><lastmod>2023-10-16T18:14:48.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/quickstart</loc><lastmod>2023-10-16T18:14:48.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sidetrack.run/why-sidetrack</loc><lastmod>2023-10-16T18:14:48.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/blog</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/blog/announcing-sidetrack</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/examples/transactional-job-insertion</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/guides/configuring-queues</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/guides/custom-db-client</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/guides/errors-and-logging</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/guides/running-migrations</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/guides/testing-sidetrack</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/guides/using-effect</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/guides/working-with-types</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/quickstart</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sidetrack.run/why-sidetrack</loc><lastmod>2023-10-24T01:19:02.351Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
