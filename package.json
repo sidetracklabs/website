@@ -37,7 +37,7 @@
     "@commitlint/config-conventional": "18.4.0",
     "@mdx-js/mdx": "3.0.0",
     "@sidetrack/client-prisma": "0.0.15",
-    "@types/node": "20.8.10",
+    "@types/node": "20.9.2",
     "@types/pg": "8.10.9",
     "autoprefixer": "10.4.16",
     "commitizen": "4.3.0",
