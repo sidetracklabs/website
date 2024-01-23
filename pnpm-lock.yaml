@@ -59,8 +59,8 @@ devDependencies:
     specifier: 1.8.0
     version: 1.8.0
   effect:
-    specifier: 2.0.2
-    version: 2.0.2
+    specifier: 2.2.0
+    version: 2.2.0
   eslint:
     specifier: 8.56.0
     version: 8.56.0
@@ -2939,8 +2939,8 @@ packages:
     resolution: {integrity: sha512-yYYNf91dlk7dEl+U1QzeSiMHIM9zz1/NqSJ5hNRZ6GrFwctaCQcdxmAhll6mQRCgXFIAMhMEawmATlGLWtU5qQ==}
     dev: false
 
-  /effect@2.0.2:
-    resolution: {integrity: sha512-YrB7AiBsvgWbA2paV0LB47Ux4SfK46v9hWwUFceN6zDgxpEzVyWfRX3tkFEGNV4t8OvPqlfyew+dmf7YzkbDYQ==}
+  /effect@2.2.0:
+    resolution: {integrity: sha512-ymp4cEa231FtoVDA+FZM6BR6acEXwWTz43jO1qbOspZPK170l4DfYwPCNI9FZm8tRSQgmqVp5Z+ACQUUnTlsjw==}
     dev: true
 
   /electron-to-chromium@1.4.485:
