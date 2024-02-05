@@ -38,7 +38,7 @@
     "@mdx-js/mdx": "3.0.0",
     "@sidetrack/client-prisma": "0.0.16",
     "@types/node": "20.11.5",
-    "@types/pg": "8.10.9",
+    "@types/pg": "8.11.0",
     "autoprefixer": "10.4.17",
     "commitizen": "4.3.0",
     "cz-git": "1.8.0",
