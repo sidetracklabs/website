@@ -15,7 +15,7 @@
     "format": "prettier --write .",
     "lint": "eslint . --ext mdx,md,js,jsx,ts,tsx",
     "start": "next start",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "config": {
     "commitizen": {
