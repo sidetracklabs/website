@@ -41,7 +41,7 @@
     "@types/pg": "8.11.2",
     "autoprefixer": "10.4.17",
     "commitizen": "4.3.0",
-    "cz-git": "1.8.0",
+    "cz-git": "1.9.0",
     "effect": "2.4.1",
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.0",
