@@ -61,8 +61,8 @@ importers:
         specifier: 1.11.0
         version: 1.11.0
       effect:
-        specifier: 3.9.2
-        version: 3.9.2
+        specifier: 3.10.14
+        version: 3.10.14
       eslint:
         specifier: 8.57.1
         version: 8.57.1
@@ -1719,8 +1719,8 @@ packages:
   effect@3.0.2:
     resolution: {integrity: sha512-X5/kHcs/hN7D/U/+dzSbqZPeVq1lebt4yBE9vVNcxJKN1NbmZ3eOdI/prXoASt866b+uVObd5jW4DzoYFXfDAQ==}
 
-  effect@3.9.2:
-    resolution: {integrity: sha512-1sx/v1HTWHTodXfzWxAFg+SCF+ACgpJVruaAMIh/NmDVvrUsf0x9PzpXvkgJUbQ1fMdmKYK//FqxeHSQ+Zxv/Q==}
+  effect@3.10.14:
+    resolution: {integrity: sha512-NtEeDltifeP6SX1JptGL+k1k6CDjB++Yc7enAKEj3Pd7/4Llb4CDgZybqyiyqBkGK805ZLOIkyAyELdoJpmcqg==}
 
   electron-to-chromium@1.5.13:
     resolution: {integrity: sha512-lbBcvtIJ4J6sS4tb5TLp1b4LyfCdMkwStzXPyAgVgTRAsep4bvrAGaBOP7ZJtQMNJpSQ9SqG4brWOroNaQtm7Q==}
@@ -2007,6 +2007,10 @@ packages:
   external-editor@3.1.0:
     resolution: {integrity: sha512-hMQ4CX1p1izmuLYyZqLMO/qGNw10wSv9QDCPfzXfyFrOaCSSoRfqE1Kf1s5an66J5JZC62NewG+mK49jOCtQew==}
     engines: {node: '>=4'}
+
+  fast-check@3.23.1:
+    resolution: {integrity: sha512-u/MudsoQEgBUZgR5N1v87vEgybeVYus9VnDVaIkxkkGP2jt54naghQ3PCQHJiogS8U/GavZCUPFfx3Xkp+NaHw==}
+    engines: {node: '>=8.0.0'}
 
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
@@ -3625,6 +3629,9 @@ packages:
   punycode@2.3.0:
     resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
     engines: {node: '>=6'}
+
+  pure-rand@6.1.0:
+    resolution: {integrity: sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==}
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -6106,7 +6113,9 @@ snapshots:
 
   effect@3.0.2: {}
 
-  effect@3.9.2: {}
+  effect@3.10.14:
+    dependencies:
+      fast-check: 3.23.1
 
   electron-to-chromium@1.5.13: {}
 
@@ -6603,6 +6612,10 @@ snapshots:
       chardet: 0.7.0
       iconv-lite: 0.4.24
       tmp: 0.0.33
+
+  fast-check@3.23.1:
+    dependencies:
+      pure-rand: 6.1.0
 
   fast-deep-equal@3.1.3: {}
 
@@ -8802,6 +8815,8 @@ snapshots:
   pseudomap@1.0.2: {}
 
   punycode@2.3.0: {}
+
+  pure-rand@6.1.0: {}
 
   queue-microtask@1.2.3: {}
 
