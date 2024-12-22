@@ -1,38 +1,9 @@
-import { nodeTypes } from "@mdx-js/mdx";
 import nextra from "nextra";
-import rehypeRaw from "rehype-raw";
-import remarkShikiTwoslash from "remark-shiki-twoslash";
-
-// import ts from "typescript";
-
-// const { options } = ts.convertCompilerOptionsFromJson(
-//   { module: "ESNext" },
-//   "."
-// );
-
-// console.log("OPTIONS", options);
 
 const withNextra = nextra({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.tsx",
   defaultShowCopyCode: true,
-  mdxOptions: {
-    rehypePlugins: [[rehypeRaw, { passThrough: nodeTypes }]],
-    remarkPlugins: [
-      [
-        remarkShikiTwoslash.default,
-        {
-          defaultCompilerOptions: {
-            types: ["node"],
-            moduleResolution: 100, // bundler
-            module: 99, // esnext
-            strict: true,
-          },
-          themes: ["dark-plus", "light-plus"],
-        },
-      ],
-    ],
-  },
 });
 
 /** @type {import('next').NextConfig} */
