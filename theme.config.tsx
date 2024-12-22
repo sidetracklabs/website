@@ -49,7 +49,7 @@ const config: DocsThemeConfig = {
     </>
   ),
   footer: {
-    text: "Sidetrack Labs",
+    content: <div>Sidetrack Labs</div>,
   },
   // footer: {
   //   text: (
