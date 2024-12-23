@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { DocsThemeConfig } from "nextra-theme-docs";
+import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
 import logo from "@/assets/logo.png";
 import { useRouter } from "next/router";
 
@@ -14,17 +14,24 @@ const config: DocsThemeConfig = {
   // },
   docsRepositoryBase: "https://github.com/sidetracklabs/website",
   head: function useHead() {
-    const { asPath } = useRouter();
-    const title = asPath !== "/" ? "%s – Sidetrack" : "Sidetrack";
+    const { asPath, defaultLocale, locale } = useRouter();
+    const { frontMatter, title } = useConfig();
+    const url =
+      "https://sidetrack.run" +
+      (defaultLocale === locale ? asPath : `/${locale}${asPath}`);
 
     return (
       <>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Sidetrack" />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={frontMatter.title || title} />
         <meta
           property="og:description"
-          content="An open source, PostgreSQL-backed, typescript-first background job library."
+          content={
+            frontMatter.description ||
+            "An open source, PostgreSQL-backed, typescript-first background job library."
+          }
         />
         <link
           rel="apple-touch-icon"
