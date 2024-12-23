@@ -67,8 +67,8 @@ importers:
         specifier: 1.11.0
         version: 1.11.0
       effect:
-        specifier: 3.11.9
-        version: 3.11.9
+        specifier: 3.12.0
+        version: 3.12.0
       eslint:
         specifier: 9.17.0
         version: 9.17.0(jiti@2.4.2)
@@ -2011,8 +2011,8 @@ packages:
   effect@3.0.2:
     resolution: {integrity: sha512-X5/kHcs/hN7D/U/+dzSbqZPeVq1lebt4yBE9vVNcxJKN1NbmZ3eOdI/prXoASt866b+uVObd5jW4DzoYFXfDAQ==}
 
-  effect@3.11.9:
-    resolution: {integrity: sha512-BeEOFVpe+f7S9mTiA2CLIzi1ywxgF1fUbcAank4jwdd6P0ZHQhaW3XVPZ7vkCNDTqmJs2f/gN2uV+Yw0ZqfDng==}
+  effect@3.12.0:
+    resolution: {integrity: sha512-b/u9s3b9HfTo0qygVouegP0hkbiuxRIeaCe1ppf8P88hPyl6lKCbErtn7Az4jG7LuU7f0Wgm4c8WXbMcL2j8+g==}
 
   electron-to-chromium@1.5.13:
     resolution: {integrity: sha512-lbBcvtIJ4J6sS4tb5TLp1b4LyfCdMkwStzXPyAgVgTRAsep4bvrAGaBOP7ZJtQMNJpSQ9SqG4brWOroNaQtm7Q==}
@@ -6761,7 +6761,7 @@ snapshots:
 
   effect@3.0.2: {}
 
-  effect@3.11.9:
+  effect@3.12.0:
     dependencies:
       fast-check: 3.23.2
 
