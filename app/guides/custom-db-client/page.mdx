@@ -27,8 +27,8 @@ const sidetrack = new Sidetrack<{
   },
   queues: {
     userOnboarding: {
-      handler: async (job) => {
-        console.log(`Welcome ${job.payload.email}`);
+      run: async (payload, context) => {
+        console.log(`Welcome ${payload.email}`);
       },
     },
   },

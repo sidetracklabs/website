@@ -1,6 +1,6 @@
 # Working with Types
 
-Typing the queues and handlers will help prevent you from misusing Sidetrack, like inserting a job on a nonexistent queue, or inserting a job with an invalid payload. Following the types will improve your developer experience.
+Typing the queues and runners will help prevent you from misusing Sidetrack, like inserting a job on a nonexistent queue, or inserting a job with an invalid payload. Following the types will improve your developer experience.
 
 To get started, pass in the type for Sidetrack's constructor. This type is an object with keys that match your queue names, and values that are the type of the payload for that queue. For example, if you have a queue called userOnboarding, and the payload is an object with an email property, you can type your queues like this:
 
@@ -27,19 +27,15 @@ const sidetrack = new Sidetrack<QueueNamesAndPayloads>({
   },
   queues: {
     userOnboarding: {
-      handler: async (job) => {
-        console.log(`Welcome ${job.payload.email}`);
+      run: async (payload, context) => {
+        console.log(`Welcome ${payload.email}`);
       },
     },
   },
 });
 ```
 
-```ts twoslash
-// @include: main
-```
-
-Notice how the handler function receives a job. This job contains a `payload` key which will be typed to match your payload types above. The job also contains other fields you can use in your handler function (e.g. the job's id, scheduledAt, status, currentAttempt, etc.)
+Notice how the run function receives a job. This job contains a `payload` key which will be typed to match your payload types above. The job also contains other fields you can use in your run function (e.g. the job's id, scheduledAt, status, currentAttempt, etc.)
 
 ## Avoiding errors
 
@@ -63,7 +59,7 @@ sidetrack.insertJob("userOnboarding", { phone: "11111111111" });
 
 ## Reusable Types
 
-Sidetrack exports most of the types it uses internally, so you can easily type your handlers and queues. For example, if you have a queue called `userOnboarding`, you can type your handler like this:
+Sidetrack exports most of the types it uses internally, so you can easily type your runners and queues. For example, if you have a queue called `userOnboarding`, you can type your runner like this:
 
 ```ts twoslash
 import { Sidetrack, SidetrackQueues } from "sidetrack";
@@ -74,8 +70,8 @@ type QueueNamesAndPayloads = {
 
 const queues: SidetrackQueues<QueueNamesAndPayloads> = {
   userOnboarding: {
-    handler: async (job) => {
-      console.log(`Welcome ${job.payload.email}`);
+    run: async (payload, context) => {
+      console.log(`Welcome ${payload.email}`);
     },
   },
 };

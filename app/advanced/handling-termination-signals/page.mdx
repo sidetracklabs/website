@@ -1,0 +1,5 @@
+# Handling Termination Signals
+
+When you run Sidetrack in a production environment, you may want to manage termination signals for longer running jobs so that you can gracefully shut down the worker.
+
+When Sidetrack receives a SIGTERM signal, it will stop accepting new jobs and let the current jobs continue running.

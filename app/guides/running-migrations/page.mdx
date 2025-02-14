@@ -6,7 +6,6 @@ The migrations creates a `sidetrack_job` table in your database, under the `side
 If you want to manually run the migrations, call `runMigrations` with your database connection string.
 
 ```ts twoslash
-// @noErrors
 import { runMigrations } from "sidetrack";
 
 await runMigrations(process.env["DATABASE_URL"]!);

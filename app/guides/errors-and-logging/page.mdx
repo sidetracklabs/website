@@ -5,14 +5,13 @@ Whenever Sidetrack encounters an unhandled exception while running your job, the
 While you can always refer to the `errors` field on the job to see what went wrong, you should consider adding logs.
 
 ```ts twoslash
-// @noErrors
-import { Sidetrack, SidetrackJobWithPayload } from "sidetrack";
+import { Sidetrack, SidetrackJob } from "sidetrack";
 
-const onboardUser = async (job: SidetrackJobWithPayload<{ email: string }>) => {
+const onboardUser = async (payload: { email: string }) => {
   try {
     // do something
   } catch (error) {
-    logger.error(`Job ${job.id} failed`, error);
+    console.error(`Job ${payload.email} failed`, error);
     throw error;
   }
 };
@@ -25,7 +24,7 @@ const sidetrack = new Sidetrack<{
   },
   queues: {
     userOnboarding: {
-      handler: onboardUser,
+      run: onboardUser,
     },
   },
 });

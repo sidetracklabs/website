@@ -29,7 +29,7 @@ it("job runs", async () => {
     },
     queues: {
       userOnboarding: {
-        handler: async (job) => {
+        run: async (payload, context) => {
           console.log("ran job");
         },
       },
@@ -52,19 +52,39 @@ it("job runs", async () => {
 
 While `runJob` only allows you to run a single job, often you may want to run all the jobs on a queue.
 
-```ts
+```ts twoslash include setup
+import { SidetrackTest } from "sidetrack";
+
+const sidetrack = new SidetrackTest<{
+  userOnboarding: { email: string };
+}>({
+  databaseOptions: {
+    connectionString: process.env["DATABASE_URL"]!,
+  },
+  queues: {
+    userOnboarding: {
+      run: async (payload, context) => {
+        console.log("ran job");
+      },
+    },
+  },
+});
+```
+
+```ts twoslash
+// @include: setup
+// ---cut---
 // You can run jobs on a single queue
 await sidetrack.runJobs({ queue: "userOnboarding" });
 ```
 
 By default, `runJobs` runs jobs that are scheduled in the past or present. If you want to include future jobs you may pass an option for `{includeFutureJobs: true}`
 
-```ts
+```ts twoslash
+// @include: setup
+// ---cut---
 // Will run all jobs on this queue, including ones with scheduledAt in the future
-await sidetrack.runJobs(
-  { queue: "userOnboarding" },
-  { includeFutureJobs: true },
-);
+await sidetrack.runJobs({ queue: "userOnboarding", includeFutureJobs: true });
 ```
 
 ## Listing jobs
@@ -72,28 +92,32 @@ await sidetrack.runJobs(
 You may want to assert that certain jobs exist on a queue(s).
 `listJob` accepts a single queue or list of queues, and returns a list of jobs.
 
-```ts
-await sidetrack.insert("userOnboarding", { email: "a@example.com" });
-await sidetrack.insert("userOnboarding", { email: "b@example.com" });
+```ts twoslash
+// @include: setup
+// ---cut---
+await sidetrack.insertJob("userOnboarding", { email: "a@example.com" });
+await sidetrack.insertJob("userOnboarding", { email: "b@example.com" });
 
 // You can run jobs on a single queue
 const jobs = await sidetrack.listJobs({ queue: "userOnboarding" });
-expect(jobs.length).toBe(2);
+// expect(jobs.length).toBe(2);
 ```
 
 ## Listing job statuses
 
 `listJobStatuses` provides a convenient way to know the breakdown of all the jobs and their statuses.
 
-```ts
-const job1 = await sidetrack.insert("userOnboarding", {
+```ts twoslash
+// @include: setup
+// ---cut---
+const job1 = await sidetrack.insertJob("userOnboarding", {
   email: "a@example.com",
 });
-await sidetrack.insert("userOnboarding", { email: "b@example.com" });
+await sidetrack.insertJob("userOnboarding", { email: "b@example.com" });
 await sidetrack.runJob(job1.id);
 
 // since we only ran job 1
 // we should expect 1 job to be completed, 1 job to be in scheduled
-const jobs = await sidetrack.listJobsStatuses("userOnboarding");
-expect(jobs).toBeObject({ scheduled: 1, completed: 1 });
+const jobs = await sidetrack.listJobStatuses({ queue: "userOnboarding" });
+// expect(jobs).toBeObject({ scheduled: 1, completed: 1 });
 ```

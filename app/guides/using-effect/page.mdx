@@ -7,30 +7,30 @@ If you are using [Effect-TS](https://effect.website), Sidetrack exports an `Effe
 Sidetrack is written with Effect, which means that you can use the Effect API directly if you prefer.
 
 ```ts twoslash
-// @noErrors
 import * as Effect from "effect/Effect";
-import { createSidetrackServiceTag, makeLayer } from "sidetrack/effect";
+// import { createSidetrackServiceTag, makeLayer } from "sidetrack/effect";
+import { SidetrackEffect } from "sidetrack";
 
 type Queues = {
   userOnboarding: { email: string };
 };
 
-const SidetrackService = createSidetrackServiceTag<Queues>();
+const SidetrackService = SidetrackEffect.createSidetrackServiceTag<Queues>();
 
-const sidetrackLayer = makeLayer<Queues>({
+const sidetrackLayer = SidetrackEffect.makeLayer<Queues>({
   databaseOptions: {
     connectionString: process.env["DATABASE_URL"]!,
   },
   queues: {
     userOnboarding: {
-      handler: async (job) => {
-        console.log(`Welcome ${job.payload.email}`);
+      run: async (payload) => {
+        console.log(`Welcome ${payload.email}`);
       },
     },
   },
 });
 
-const program = Effect.runPromise(
+Effect.runPromise(
   Effect.flatMap(SidetrackService, (sidetrack) =>
     sidetrack.insertJob("userOnboarding", { email: "hello@example.com" }),
   ).pipe(Effect.provide(sidetrackLayer)),
@@ -38,17 +38,13 @@ const program = Effect.runPromise(
 ```
 
 <Callout type="warning" emoji="⚠️">
-  If the `sidetrack/effect` import doesn't work, you will need to use
+  If you use ESM, you can use the `sidetrack/effect` import. If the `sidetrack/effect` import doesn't work, you will need to use
 
 {/* `prettier-ignore` */}
 
 ```ts
 import { SidetrackEffect } from "sidetrack";
 ```
-
-and access the methods on that
-export (e.g. `SidetrackEffect.makeLayer`). Certain TypeScript configurations
-don't allow for that import to work correctly.
 
 </Callout>
 

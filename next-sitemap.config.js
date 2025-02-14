@@ -2,4 +2,5 @@
 module.exports = {
   siteUrl: process.env.DEPLOY_URL ?? "https://sidetrack.run",
   generateRobotsTxt: true,
+  generateIndexSitemap: false,
 };

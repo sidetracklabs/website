@@ -1,0 +1,122 @@
+# Cron Jobs
+
+Sidetrack supports scheduling recurring jobs using cron expressions. This allows you to run jobs on a schedule, like sending weekly reports or cleaning up old data.
+
+## Scheduling a Cron Job
+
+Use the `scheduleCron` method to create a recurring job. You'll need to specify:
+
+1. The queue name
+2. A cron expression
+3. The job payload
+
+```ts twoslash include cron
+import { Sidetrack } from "sidetrack";
+
+const generateReport = async (userId: string) => {
+  console.log(`Generating report for user ${userId}`);
+};
+
+const sidetrack = new Sidetrack<{
+  weeklyReport: { userId: string };
+}>({
+  databaseOptions: {
+    connectionString: process.env["DATABASE_URL"]!,
+  },
+  queues: {
+    weeklyReport: {
+      run: async (payload, context) => {
+        await generateReport(payload.userId);
+      },
+    },
+  },
+});
+```
+
+```ts twoslash
+// @include: cron
+// ---cut---
+// Run every Monday at 9am
+await sidetrack.scheduleCron("weeklyReport", "0 9 * * 1", { userId: "123" });
+```
+
+The cron expression can use either 5 (standard cron format) or 6 (non-standard) parts. The 6-part format includes seconds:
+
+```
+┌─────────────── second (0 - 59) (optional)
+│ ┌───────────── minute (0 - 59)
+│ │ ┌───────────── hour (0 - 23)
+│ │ │ ┌───────────── day of month (1 - 31)
+│ │ │ │ ┌───────────── month (1 - 12)
+│ │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday)
+│ │ │ │ │ │
+│ │ │ │ │ │
+* * * * * *    (6-part format with seconds)
+  * * * * *    (5-part format without seconds)
+```
+
+You can optionally specify a timezone when scheduling the cron job:
+
+```ts twoslash
+// @include: cron
+// ---cut---
+await sidetrack.scheduleCron(
+  "weeklyReport",
+  "0 9 * * 1",
+  { userId: "123" },
+  { timezone: "America/New_York" },
+);
+```
+
+## Managing Cron Schedules
+
+### Deactivating a Schedule
+
+To temporarily stop a cron schedule from creating new jobs, use `deactivateCronSchedule`:
+
+```ts twoslash
+// @include: cron
+// ---cut---
+await sidetrack.deactivateCronSchedule("weeklyReport", "0 9 * * 1");
+```
+
+This will prevent new jobs from being created, but won't affect any existing jobs that were already scheduled.
+
+### Deleting a Schedule
+
+To permanently remove a cron schedule, use `deleteCronSchedule`:
+
+```ts twoslash
+// @include: cron
+// ---cut---
+await sidetrack.deleteCronSchedule("weeklyReport", "0 9 * * 1");
+```
+
+This removes the cron schedule from the database entirely. Any existing jobs that were already scheduled will still run.
+
+## Common Cron Patterns
+
+Here are some common cron patterns you might find useful:
+
+```
+# Every 30 seconds (6-part format)
+30 * * * * *
+
+# Every minute
+* * * * *
+
+# Every hour
+0 * * * *
+
+# Every day at midnight
+0 0 * * *
+
+# Every Monday at 9am
+0 9 * * 1
+
+# Every weekday at 9am
+0 9 * * 1-5
+
+# First day of every month at midnight
+0 0 1 * *
+```

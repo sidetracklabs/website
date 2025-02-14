@@ -1,9 +1,12 @@
 # Configuring Queues
 
-When specifying a queue, you can optionally pass an `options` object to customize the queue's behavior.
-There's currently 1 option you can customize:
+When specifying a queue, you can optionally pass in some options along with the queue object to customize the queue's behavior.
+
+There's currently 3 options you can customize:
 
 1. `maxAttempts` - Default is 1. Increasing this means your job will be retried until `currentAttempt <= maxAttempts`.
+2. `payloadTransformer` - Transform the payload before it's inserted into the database and when it's retrieved from the database.
+3. `pollingInterval` - Default is 2 seconds. This is the interval at which sidetrack will poll your database for new jobs.
 
 ## maxAttempts
 
@@ -20,13 +23,11 @@ const sidetrack = new Sidetrack<{
   },
   queues: {
     userOnboarding: {
-      handler: async (job) => {
+      run: async (payload, context) => {
         throw new Error("intentionally failing job");
       },
-      options: {
-        maxAttempts: 5,
-        // ^?
-      },
+      maxAttempts: 5,
+      // ^?
     },
   },
 });
@@ -37,3 +38,74 @@ sidetrack.insertJob("userOnboarding", { email: "a@example.com" });
 ```
 
 This job will fail on the first run then move to `retrying` status since its `currentAttempt` (1) is less than 5. After 5 attempts, the job will transition to a status of `failed`.
+
+## payloadTransformer
+
+The `payloadTransformer` option allows you to transform the payload before it's inserted into the database and when it's retrieved from the database.
+
+```ts twoslash
+// @noErrors
+import { Sidetrack } from "sidetrack";
+import superjson from "superjson";
+
+const sidetrack = new Sidetrack<{
+  userOnboarding: { registeredAt: Date };
+}>({
+  databaseOptions: {
+    connectionString: process.env["DATABASE_URL"]!,
+  },
+  // Transform Date objects when saving to and loading from the database
+  payloadTransformer: {
+    serialize: (payload) => superjson.stringify(payload),
+    deserialize: (payload) => superjson.deserialize(payload),
+  },
+  queues: {
+    userOnboarding: {
+      run: async (payload) => {
+        // payload.registeredAt is a Date object, not a string
+        console.log(`User registered at ${payload.registeredAt.toISOString()}`);
+      },
+    },
+  },
+});
+
+sidetrack.start();
+
+// Date objects are automatically handled by the transformer
+sidetrack.insertJob("userOnboarding", { registeredAt: new Date() });
+```
+
+By default, when storing job payloads in the database, they are serialized to JSON. This works fine for simple objects, but can cause issues with special types like `Date` objects which get converted to strings. Using a `payloadTransformer`, you can customize how the payload is serialized and deserialized.
+
+In this example, we use [superjson](https://github.com/blitz-js/superjson) to handle the transformation. This allows us to work with `Date` objects directly in our job handlers, while ensuring they are properly stored in the database.
+
+## pollingInterval
+
+The `pollingInterval` option allows you to customize the interval at which sidetrack will poll your database for new jobs. It can be set on the queue level or the sidetrack instance level.
+
+```ts twoslash
+import { Sidetrack } from "sidetrack";
+
+const sidetrack = new Sidetrack<{
+  userOnboarding: { email: string };
+}>({
+  databaseOptions: {
+    connectionString: process.env["DATABASE_URL"]!,
+  },
+  queues: {
+    userOnboarding: {
+      run: async (payload, context) => {
+        throw new Error("intentionally failing job");
+      },
+      pollingInterval: 3000, // 3 seconds
+      // ^?
+    },
+  },
+  pollingInterval: 5000, // 5 seconds
+  // ^?
+});
+
+sidetrack.start();
+
+sidetrack.insertJob("userOnboarding", { email: "a@example.com" });
+```

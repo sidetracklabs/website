@@ -14,6 +14,9 @@ export default {
   examples: {
     title: "Examples",
   },
+  advanced: {
+    title: "Advanced",
+  },
   contact: {
     title: "Reference Docs",
     href: "https://sidetracklabs.github.io/sidetrack/",
