@@ -4,9 +4,9 @@ When specifying a queue, you can optionally pass in some options along with the 
 
 There's currently 3 options you can customize:
 
-1. `maxAttempts` - Default is 1. Increasing this means your job will be retried until `currentAttempt <= maxAttempts`.
-2. `payloadTransformer` - Transform the payload before it's inserted into the database and when it's retrieved from the database.
-3. `pollingInterval` - Default is 2 seconds. This is the interval at which sidetrack will poll your database for new jobs.
+1. [`maxAttempts`](#maxattempts) - Default is 1. Increasing this means your job will be retried until `currentAttempt <= maxAttempts`.
+2. [`payloadTransformer`](#payloadtransformer) - Transform the payload before it's inserted into the database and when it's retrieved from the database.
+3. [`pollingInterval`](#pollinginterval) - Default is 2 seconds. This is the interval at which sidetrack will poll your database for new jobs.
 
 ## maxAttempts
 
