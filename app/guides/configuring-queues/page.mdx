@@ -41,7 +41,7 @@ This job will fail on the first run then move to `retrying` status since its `cu
 
 ## payloadTransformer
 
-The `payloadTransformer` option allows you to transform the payload before it's inserted into the database and when it's retrieved from the database.
+The `payloadTransformer` option allows you to transform the payload before it's inserted into the database and when it's retrieved from the database. It can be set on the queue or the sidetrack instance. When set on the sidetrack instance, the same transformer will be used for all queues. The queue transformer will take precedence over the sidetrack instance transformer.
 
 ```ts twoslash
 // @noErrors
@@ -65,6 +65,10 @@ const sidetrack = new Sidetrack<{
         // payload.registeredAt is a Date object, not a string
         console.log(`User registered at ${payload.registeredAt.toISOString()}`);
       },
+      payloadTransformer: {
+        serialize: (payload) => superjson.stringify(payload),
+        deserialize: (payload) => superjson.deserialize(payload),
+      },
     },
   },
 });
@@ -81,7 +85,7 @@ In this example, we use [superjson](https://github.com/blitz-js/superjson) to ha
 
 ## pollingInterval
 
-The `pollingInterval` option allows you to customize the interval at which sidetrack will poll your database for new jobs. It can be set on the queue level or the sidetrack instance level.
+The `pollingInterval` option allows you to customize the interval at which sidetrack will poll your database for new jobs. It can be set on the queue or the sidetrack instance. If set on the sidetrack instance, the same polling interval will be used for all queues. The queue polling interval will take precedence over the sidetrack instance polling interval.
 
 ```ts twoslash
 import { Sidetrack } from "sidetrack";
