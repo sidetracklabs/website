@@ -15,20 +15,15 @@
   "packageRules": [
     {
       "groupName": "effect",
-      "matchPackageNames": [
-        "@effect/{/,}**"
-      ]
+      "matchPackageNames": ["@effect/{/,}**"]
     },
     {
       "groupName": "all patches",
       "groupSlug": "all-patch",
-      "matchUpdateTypes": [
-        "patch"
-      ],
-      "matchPackageNames": [
-        "*"
-      ]
+      "matchUpdateTypes": ["patch"],
+      "matchPackageNames": ["*"]
     }
   ],
-  "platformAutomerge": true
+  "platformAutomerge": true,
+  "prHourlyLimit": 10
 }

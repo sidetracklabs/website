@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   index: "Introduction",
   "why-sidetrack": "Why Sidetrack?",
@@ -13,16 +14,8 @@ export default {
   examples: {
     title: "Examples",
   },
-  blog: {
-    title: "Blog",
-    type: "page",
-    theme: {
-      typesetting: "article",
-    },
-  },
   contact: {
-    title: "Reference Docs ↗",
+    title: "Reference Docs",
     href: "https://sidetracklabs.github.io/sidetrack/",
-    newWindow: true,
   },
 };
