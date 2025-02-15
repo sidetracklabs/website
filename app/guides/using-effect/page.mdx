@@ -15,9 +15,9 @@ type Queues = {
   userOnboarding: { email: string };
 };
 
-const SidetrackService = SidetrackEffect.createSidetrackServiceTag<Queues>();
+const SidetrackService = SidetrackEffect.getSidetrackService<Queues>();
 
-const sidetrackLayer = SidetrackEffect.makeLayer<Queues>({
+const sidetrackLayer = SidetrackEffect.layer<Queues>({
   databaseOptions: {
     connectionString: process.env["DATABASE_URL"]!,
   },
@@ -38,14 +38,7 @@ Effect.runPromise(
 ```
 
 <Callout type="warning" emoji="⚠️">
-  If you use ESM, you can use the `sidetrack/effect` import. If the `sidetrack/effect` import doesn't work, you will need to use
-
-{/* `prettier-ignore` */}
-
-```ts
-import { SidetrackEffect } from "sidetrack";
-```
-
+  If you use ESM, you can use the `sidetrack/effect` import if you want.
 </Callout>
 
 You can find the remaining reference documentation for the Effect docs [here](https://sidetracklabs.github.io/sidetrack/modules/sidetrack.effect.html). The functions are similar to the ones in the class-based API, but they return Effects instead of Promises, with some error handling. Over time, the Effect API might be expanded to include more features. Please open an issue if you have any requests for how we can make the API more ergonomic or "Effectful."

@@ -1,7 +1,8 @@
 # Running migrations
 
 Migrations will automatically be run when you call `sidetrack.start()`.
-The migrations creates a `sidetrack_job` table in your database, under the `sidetrack` schema.
+
+The migrations create a few tables in your database, like `sidetrack_jobs` and `sidetrack_cron_jobs`.
 
 If you want to manually run the migrations, call `runMigrations` with your database connection string.
 
