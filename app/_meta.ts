@@ -19,6 +19,6 @@ export default {
   },
   contact: {
     title: "Reference Docs",
-    href: "https://sidetracklabs.github.io/sidetrack/",
+    href: "https://sidetracklabs.github.io/sidetrack",
   },
 };

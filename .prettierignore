@@ -36,3 +36,5 @@ next-env.d.ts
 
 # RSS feed, browserslist, sitemap, etc.
 *.xml
+
+pnpm-lock.yaml
