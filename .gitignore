@@ -3,3 +3,5 @@ node_modules
 out/
 
 _pagefind/
+
+pnpm-lock.yaml
