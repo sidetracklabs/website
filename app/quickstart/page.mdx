@@ -38,7 +38,7 @@ const sidetrack = new Sidetrack<{
 ```ts twoslash
 // @include: main
 
-sidetrack.start(); // starts listening for new jobs in your DB
+sidetrack.start(); // starts listening for new jobs in your database
 ```
 
 Notice how you pass in the types for your queues, specifying your queueName as the key (`userOnboarding`), and the value being the type for your job's payload (`{email: string}`).

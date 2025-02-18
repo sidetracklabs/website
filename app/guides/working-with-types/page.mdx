@@ -10,7 +10,7 @@ type QueueNamesAndPayloads = {
 };
 ```
 
-The type of your payload must only use JSON serializable values, since the job payload will be persisted in the DB as `JSONB`.
+The type of your payload must only use JSON serializable values (unless using a [payload transformer](https://sidetrack.run/guides/configuring-queues#payloadtransformer)), since the job payload will be persisted in the database in a column with the `JSONB` datatype.
 
 Here is the full example:
 
