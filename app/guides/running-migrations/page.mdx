@@ -11,3 +11,11 @@ import { runMigrations } from "sidetrack";
 
 await runMigrations(process.env["DATABASE_URL"]!);
 ```
+
+You may also manually run migrations using sidetrack's CLI:
+
+```sh
+npx sidetrack migrations run --database-url $DATABASE_URL
+```
+
+The `database-url` flag is optional, and defaults to the `DATABASE_URL` environment variable if you do not provide a connection string.
