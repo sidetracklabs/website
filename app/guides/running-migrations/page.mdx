@@ -2,11 +2,11 @@
 
 Migrations will automatically be run when you call `sidetrack.start()`.
 
-The migrations create a few tables in your database, like `sidetrack_jobs` and `sidetrack_cron_jobs`.
-
-If you want to manually run the migrations, call `runMigrations` with your database connection string.
+The migrations create a few tables in your database, like `sidetrack_jobs` and `sidetrack_cron_jobs` and associated database artifacts sidetrack needs to operate.
 
 ## Programmatically
+
+If you want to manually run the migrations, call `runMigrations` with your database connection string.
 
 ```ts twoslash
 import { runMigrations } from "sidetrack";
@@ -16,7 +16,7 @@ await runMigrations(process.env["DATABASE_URL"]!);
 
 ## CLI
 
-You may also manually run migrations using sidetrack's CLI:
+You may also manually run migrations using Sidetrack's CLI:
 
 ```sh
 npx sidetrack migrations run --database-url $DATABASE_URL
