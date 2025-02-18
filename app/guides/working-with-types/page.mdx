@@ -23,7 +23,7 @@ type QueueNamesAndPayloads = {
 
 const sidetrack = new Sidetrack<QueueNamesAndPayloads>({
   databaseOptions: {
-    connectionString: process.env["DATABASE_URL"]!,
+    databaseUrl: process.env["DATABASE_URL"]!,
   },
   queues: {
     userOnboarding: {
@@ -78,7 +78,7 @@ const queues: SidetrackQueues<QueueNamesAndPayloads> = {
 
 const sidetrack = new Sidetrack<QueueNamesAndPayloads>({
   databaseOptions: {
-    connectionString: process.env["DATABASE_URL"]!,
+    databaseUrl: process.env["DATABASE_URL"]!,
   },
   queues,
 });

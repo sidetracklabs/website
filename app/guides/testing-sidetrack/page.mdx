@@ -25,7 +25,7 @@ it("job runs", async () => {
     userOnboarding: { email: string };
   }>({
     databaseOptions: {
-      connectionString: process.env["DATABASE_URL"]!,
+      databaseUrl: process.env["DATABASE_URL"]!,
     },
     queues: {
       userOnboarding: {
@@ -59,7 +59,7 @@ const sidetrack = new SidetrackTest<{
   userOnboarding: { email: string };
 }>({
   databaseOptions: {
-    connectionString: process.env["DATABASE_URL"]!,
+    databaseUrl: process.env["DATABASE_URL"]!,
   },
   queues: {
     userOnboarding: {

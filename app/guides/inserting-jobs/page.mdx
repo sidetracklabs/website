@@ -11,7 +11,7 @@ const sidetrack = new Sidetrack<{
   sendNewsletter: { templateId: string };
 }>({
   databaseOptions: {
-    connectionString: process.env["DATABASE_URL"]!,
+    databaseUrl: process.env["DATABASE_URL"]!,
   },
   queues: {
     userOnboarding: {

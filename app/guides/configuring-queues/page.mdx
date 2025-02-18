@@ -19,7 +19,7 @@ const sidetrack = new Sidetrack<{
   userOnboarding: { email: string };
 }>({
   databaseOptions: {
-    connectionString: process.env["DATABASE_URL"]!,
+    databaseUrl: process.env["DATABASE_URL"]!,
   },
   queues: {
     userOnboarding: {
@@ -52,7 +52,7 @@ const sidetrack = new Sidetrack<{
   userOnboarding: { registeredAt: Date };
 }>({
   databaseOptions: {
-    connectionString: process.env["DATABASE_URL"]!,
+    databaseUrl: process.env["DATABASE_URL"]!,
   },
   // Transform Date objects when saving to and loading from the database
   payloadTransformer: {
@@ -94,7 +94,7 @@ const sidetrack = new Sidetrack<{
   userOnboarding: { email: string };
 }>({
   databaseOptions: {
-    connectionString: process.env["DATABASE_URL"]!,
+    databaseUrl: process.env["DATABASE_URL"]!,
   },
   queues: {
     userOnboarding: {

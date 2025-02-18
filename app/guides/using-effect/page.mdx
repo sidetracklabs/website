@@ -19,7 +19,7 @@ const SidetrackService = SidetrackEffect.getSidetrackService<Queues>();
 
 const sidetrackLayer = SidetrackEffect.layer<Queues>({
   databaseOptions: {
-    connectionString: process.env["DATABASE_URL"]!,
+    databaseUrl: process.env["DATABASE_URL"]!,
   },
   queues: {
     userOnboarding: {
