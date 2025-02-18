@@ -1,0 +1,127 @@
+# Inserting Jobs
+
+When inserting jobs with Sidetrack, you can use several options to control how and when jobs are executed. Let's look at the different ways to insert jobs.
+
+```ts twoslash include main
+import { Sidetrack } from "sidetrack";
+
+const sidetrack = new Sidetrack<{
+  userOnboarding: { email: string };
+  sendReminder: { email: string };
+  sendNewsletter: { templateId: string };
+}>({
+  databaseOptions: {
+    connectionString: process.env["DATABASE_URL"]!,
+  },
+  queues: {
+    userOnboarding: {
+      run: async (payload) => {
+        console.log(`Onboarding ${payload.email}`);
+      },
+    },
+    sendReminder: {
+      run: async (payload) => {
+        console.log(`Sending reminder to ${payload.email}`);
+      },
+    },
+    sendNewsletter: {
+      run: async (payload) => {
+        console.log(`Sending newsletter template ${payload.templateId}`);
+      },
+    },
+  },
+});
+```
+
+## Basic Job Insertion
+
+The simplest way to insert a job is to specify the queue name and payload:
+
+```ts twoslash
+// @include: main
+// ---cut---
+sidetrack.insertJob("userOnboarding", { email: "user@example.com" });
+```
+
+## Scheduled Jobs
+
+You can schedule jobs to run at a specific time in the future using the `scheduledAt` option:
+
+```ts twoslash
+// @include: main
+// ---cut---
+// Schedule a job to run 1 hour from now
+const futureDate = new Date(Date.now() + 60 * 60 * 1000);
+
+sidetrack.insertJob(
+  "sendReminder",
+  { email: "user@example.com" },
+  { scheduledAt: futureDate },
+);
+```
+
+## Unique Jobs
+
+To prevent duplicate jobs from being created, you can use the `uniqueKey` option. This is useful for operations that should only happen once:
+
+```ts twoslash
+// @include: main
+// ---cut---
+// This will only create one job, even if called multiple times
+sidetrack.insertJob(
+  "userOnboarding",
+  { email: "user@example.com" },
+  { uniqueKey: "onboard-user-123" },
+);
+```
+
+By default, attempting to insert a job with a duplicate `uniqueKey` will throw an error. You can suppress this error using `suppressDuplicateUniqueKeyErrors`:
+
+```ts twoslash
+// @include: main
+// ---cut---
+// This won't throw an error if a job with the same uniqueKey exists
+sidetrack.insertJob(
+  "userOnboarding",
+  { email: "user@example.com" },
+  {
+    uniqueKey: "onboard-user-123",
+    suppressDuplicateUniqueKeyErrors: true,
+  },
+);
+```
+
+## Combining Options
+
+You can combine these options as needed:
+
+```ts twoslash
+// @include: main
+// ---cut---
+// Schedule a unique job for the future
+sidetrack.insertJob(
+  "sendNewsletter",
+  { templateId: "weekly-digest" },
+  {
+    scheduledAt: new Date("2024-12-31T00:00:00Z"),
+    uniqueKey: "weekly-newsletter-2024-12-31",
+    suppressDuplicateUniqueKeyErrors: true,
+  },
+);
+```
+
+## Type Safety
+
+Sidetrack ensures type safety for your job payloads. The payload must match the type you defined when initializing Sidetrack:
+
+```ts twoslash
+// @include: main
+// ---cut---
+// @errors: 2353
+
+// This will type check ✅
+sidetrack.insertJob("userOnboarding", { email: "user@example.com" });
+
+// This will cause a type error ❌
+sidetrack.insertJob("userOnboarding", { name: "John" });
+```
