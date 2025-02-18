@@ -19,7 +19,7 @@ const sidetrack = new Sidetrack<{
   userOnboarding: { email: string };
 }>({
   databaseOptions: {
-    connectionString: process.env["DATABASE_URL"]!,
+    databaseUrl: process.env["DATABASE_URL"]!,
   },
   queues: {
     userOnboarding: {

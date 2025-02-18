@@ -21,7 +21,7 @@ const sidetrack = new Sidetrack<{
   weeklyReport: { userId: string };
 }>({
   databaseOptions: {
-    connectionString: process.env["DATABASE_URL"]!,
+    databaseUrl: process.env["DATABASE_URL"]!,
   },
   queues: {
     weeklyReport: {

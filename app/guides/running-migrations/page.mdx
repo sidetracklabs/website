@@ -6,11 +6,15 @@ The migrations create a few tables in your database, like `sidetrack_jobs` and `
 
 If you want to manually run the migrations, call `runMigrations` with your database connection string.
 
+## Programmatically
+
 ```ts twoslash
 import { runMigrations } from "sidetrack";
 
 await runMigrations(process.env["DATABASE_URL"]!);
 ```
+
+## CLI
 
 You may also manually run migrations using sidetrack's CLI:
 
