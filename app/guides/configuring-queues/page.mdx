@@ -81,7 +81,7 @@ sidetrack.insertJob("userOnboarding", { registeredAt: new Date() });
 
 By default, when storing job payloads in the database, they are serialized to JSON. This works fine for simple objects, but can cause issues with special types like `Date` objects which get converted to strings. Using a `payloadTransformer`, you can customize how the payload is serialized and deserialized.
 
-In this example, we use [superjson](https://github.com/blitz-js/superjson) to handle the transformation. This allows us to work with `Date` objects directly in our job handlers, while ensuring they are properly stored in the database.
+In this example, we use [superjson](https://github.com/flightcontrolhq/superjson) to handle the transformation. This allows us to work with `Date` objects directly in our job handlers, while ensuring they are properly stored in the database.
 
 ## pollingInterval
 
