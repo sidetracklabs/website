@@ -33,6 +33,8 @@ const sidetrack = new Sidetrack<{
 });
 ```
 
+The cron schedule is currently unique by the queue name and the cron expression. If you create a cron schedule with the same queue name and cron expression as an existing cron schedule, it will update the payload and timezone.
+
 ```ts twoslash
 // @include: cron
 // ---cut---

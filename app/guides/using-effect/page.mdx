@@ -17,7 +17,7 @@ type Queues = {
 
 const SidetrackService = SidetrackEffect.getSidetrackService<Queues>();
 
-const sidetrackLayer = SidetrackEffect.layer<Queues>({
+const SidetrackLayer = SidetrackEffect.layer<Queues>({
   databaseOptions: {
     databaseUrl: process.env["DATABASE_URL"]!,
   },
@@ -33,8 +33,43 @@ const sidetrackLayer = SidetrackEffect.layer<Queues>({
 Effect.runPromise(
   Effect.flatMap(SidetrackService, (sidetrack) =>
     sidetrack.insertJob("userOnboarding", { email: "hello@example.com" }),
-  ).pipe(Effect.provide(sidetrackLayer)),
+  ).pipe(Effect.provide(SidetrackLayer)),
 );
+```
+
+To run it independently as a long running process without calling `start` for polling, you can do something like the following:
+
+```ts twoslash
+import * as Effect from "effect/Effect";
+import { SidetrackEffect } from "sidetrack";
+import { NodeRuntime } from "@effect/platform-node";
+import * as Layer from "effect/Layer";
+// import { createSidetrackServiceTag, layer } from "sidetrack/effect";
+
+type Queues = {
+  userOnboarding: { email: string };
+};
+
+const SidetrackService = SidetrackEffect.getSidetrackService<Queues>();
+
+const SidetrackLayer = SidetrackEffect.layer<Queues>({
+  databaseOptions: {
+    databaseUrl: process.env["DATABASE_URL"]!,
+  },
+  queues: {
+    userOnboarding: {
+      run: async (payload) => {
+        console.log(`Welcome ${payload.email}`);
+      },
+    },
+  },
+  // This is important so that sidetrack starts when the layer is constructed
+  startOnInitialization: true,
+  // ^?
+});
+
+// You may launch the layer independently or just construct it along with your other layers
+NodeRuntime.runMain(Layer.launch(SidetrackLayer));
 ```
 
 <Callout type="warning" emoji="⚠️">

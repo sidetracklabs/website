@@ -33,6 +33,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: 19.7.1
         version: 19.7.1
+      '@effect/platform-node':
+        specifier: 0.73.4
+        version: 0.73.4(@effect/platform@0.77.1(effect@3.13.4))(effect@3.13.4)
       '@eslint/eslintrc':
         specifier: 3.3.0
         version: 3.3.0
@@ -43,8 +46,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(acorn@8.14.0)
       '@sidetrack/client-prisma':
-        specifier: 0.1.7
-        version: 0.1.7(@prisma/client@5.19.1)
+        specifier: 0.1.13
+        version: 0.1.13(@prisma/client@5.19.1)
       '@types/node':
         specifier: 22.13.8
         version: 22.13.8
@@ -94,8 +97,8 @@ importers:
         specifier: 4.1.1
         version: 4.1.1(prettier@3.5.2)
       sidetrack:
-        specifier: 0.1.7
-        version: 0.1.7(@effect/platform@0.77.1(effect@3.13.4))(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))
+        specifier: 0.1.13
+        version: 0.1.13(@effect/platform@0.77.1(effect@3.13.4))(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))
       typescript:
         specifier: 5.8.2
         version: 5.8.2
@@ -1081,13 +1084,13 @@ packages:
   '@shikijs/vscode-textmate@10.0.1':
     resolution: {integrity: sha512-fTIQwLF+Qhuws31iw7Ncl1R3HUDtGwIipiJ9iU+UsDUwMhegFcQKQHd51nZjb7CArq0MvON8rbgCGQYWHUKAdg==}
 
-  '@sidetrack/client-prisma@0.1.7':
-    resolution: {integrity: sha512-zV/3AuywJAHY6CRnYqxZNCv6lRPkhto2K4Wx9nMv81tqFMa9vsFowrLvN+xEmerQJgLxtpnmAI/5od6oR2XiWw==}
+  '@sidetrack/client-prisma@0.1.13':
+    resolution: {integrity: sha512-JncK4m0UJtjrF/UG9CFJKitR6UQlIwiACJWtHi/iK36s4dyCTUFfbc+ZxpDQsbT22A5omSS5JXSTiyS/ALnZyw==}
     peerDependencies:
       '@prisma/client': '>= 4'
 
-  '@sidetrack/pg-migrate@0.1.1':
-    resolution: {integrity: sha512-WHGLN41eghSdYqi4inHHCzC/IKCtJJNuEvwNi2hMOkhO/boGucj07DXmEtwag/eRMfwvwAcJsjPKTA3jL9XHNw==}
+  '@sidetrack/pg-migrate@0.1.2':
+    resolution: {integrity: sha512-GE2oevo6sRTvDvGC/XA48u0XFmCBj0pwkavNgFR/+nGq6wp+iw1So4VQpfnojeojUUlxGYfMSqwcaAc7s4qeKw==}
     peerDependencies:
       pg: '>=4.3.0 <9.0.0'
 
@@ -4090,8 +4093,8 @@ packages:
     resolution: {integrity: sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==}
     engines: {node: '>= 0.4'}
 
-  sidetrack@0.1.7:
-    resolution: {integrity: sha512-afprH9I2DqIF2KwjI6n+03pN6c1RCBDzRk0qEMmJI56GyaZWZjGySGAoQ6YfdP20CjDC8yNvFq9GXguC19N2jA==}
+  sidetrack@0.1.13:
+    resolution: {integrity: sha512-apaU2sS8C9fm4WWBtn5wLfaJBKTW2ifQQQMhPRNC+5AIJAXI84oROH2r8ja0/bHysdjdSa7+ntZSTGTEziG5mA==}
     hasBin: true
 
   siginfo@2.0.0:
@@ -5635,12 +5638,12 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.1': {}
 
-  '@sidetrack/client-prisma@0.1.7(@prisma/client@5.19.1)':
+  '@sidetrack/client-prisma@0.1.13(@prisma/client@5.19.1)':
     dependencies:
       '@prisma/client': 5.19.1
       uuid: 11.1.0
 
-  '@sidetrack/pg-migrate@0.1.1(pg@8.13.3)':
+  '@sidetrack/pg-migrate@0.1.2(pg@8.13.3)':
     dependencies:
       mkdirp: 3.0.1
       pg: 8.13.3
@@ -9601,11 +9604,11 @@ snapshots:
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
-  sidetrack@0.1.7(@effect/platform@0.77.1(effect@3.13.4))(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4)):
+  sidetrack@0.1.13(@effect/platform@0.77.1(effect@3.13.4))(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4)):
     dependencies:
       '@effect/cli': 0.56.4(@effect/platform@0.77.1(effect@3.13.4))(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(effect@3.13.4)
       '@effect/platform-node': 0.73.4(@effect/platform@0.77.1(effect@3.13.4))(effect@3.13.4)
-      '@sidetrack/pg-migrate': 0.1.1(pg@8.13.3)
+      '@sidetrack/pg-migrate': 0.1.2(pg@8.13.3)
       effect: 3.13.4
       pg: 8.13.3
     transitivePeerDependencies:
