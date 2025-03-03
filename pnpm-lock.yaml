@@ -46,8 +46,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(acorn@8.14.0)
       '@sidetrack/client-prisma':
-        specifier: 0.1.13
-        version: 0.1.13(@prisma/client@5.19.1)
+        specifier: 0.1.14
+        version: 0.1.14(@prisma/client@5.19.1)
       '@types/node':
         specifier: 22.13.8
         version: 22.13.8
@@ -91,14 +91,14 @@ importers:
         specifier: 8.13.3
         version: 8.13.3
       prettier:
-        specifier: 3.5.2
-        version: 3.5.2
+        specifier: 3.5.3
+        version: 3.5.3
       prettier-plugin-sort-json:
         specifier: 4.1.1
-        version: 4.1.1(prettier@3.5.2)
+        version: 4.1.1(prettier@3.5.3)
       sidetrack:
-        specifier: 0.1.13
-        version: 0.1.13(@effect/platform@0.77.1(effect@3.13.4))(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))
+        specifier: 0.1.14
+        version: 0.1.14(@effect/platform@0.77.1(effect@3.13.4))(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))
       typescript:
         specifier: 5.8.2
         version: 5.8.2
@@ -1084,8 +1084,8 @@ packages:
   '@shikijs/vscode-textmate@10.0.1':
     resolution: {integrity: sha512-fTIQwLF+Qhuws31iw7Ncl1R3HUDtGwIipiJ9iU+UsDUwMhegFcQKQHd51nZjb7CArq0MvON8rbgCGQYWHUKAdg==}
 
-  '@sidetrack/client-prisma@0.1.13':
-    resolution: {integrity: sha512-JncK4m0UJtjrF/UG9CFJKitR6UQlIwiACJWtHi/iK36s4dyCTUFfbc+ZxpDQsbT22A5omSS5JXSTiyS/ALnZyw==}
+  '@sidetrack/client-prisma@0.1.14':
+    resolution: {integrity: sha512-gvhxEzTpoHmtDj9PZPRKaFniVsYAMrScc/Khzmti2DwRBgV8bXfFjs8jkpQ6pd2iqWp9JzLOdPEsv3l10/riyg==}
     peerDependencies:
       '@prisma/client': '>= 4'
 
@@ -3787,8 +3787,8 @@ packages:
     peerDependencies:
       prettier: ^3.0.0
 
-  prettier@3.5.2:
-    resolution: {integrity: sha512-lc6npv5PH7hVqozBR7lkBNOGXV9vMwROAPlumdBkX0wTbbzPu/U1hk5yL8p2pt4Xoc+2mkT8t/sow2YrV/M5qg==}
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -4093,8 +4093,8 @@ packages:
     resolution: {integrity: sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==}
     engines: {node: '>= 0.4'}
 
-  sidetrack@0.1.13:
-    resolution: {integrity: sha512-apaU2sS8C9fm4WWBtn5wLfaJBKTW2ifQQQMhPRNC+5AIJAXI84oROH2r8ja0/bHysdjdSa7+ntZSTGTEziG5mA==}
+  sidetrack@0.1.14:
+    resolution: {integrity: sha512-I+8nXwFUJsh8u5ugwNbYbEdXAPU8ZwcYn+vEU2AN7zzhsAA3yXUZyfw1LYIyv6XTLHBejFhz0Eb/YvjNeC0Asw==}
     hasBin: true
 
   siginfo@2.0.0:
@@ -5638,7 +5638,7 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.1': {}
 
-  '@sidetrack/client-prisma@0.1.13(@prisma/client@5.19.1)':
+  '@sidetrack/client-prisma@0.1.14(@prisma/client@5.19.1)':
     dependencies:
       '@prisma/client': 5.19.1
       uuid: 11.1.0
@@ -9134,11 +9134,11 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-sort-json@4.1.1(prettier@3.5.2):
+  prettier-plugin-sort-json@4.1.1(prettier@3.5.3):
     dependencies:
-      prettier: 3.5.2
+      prettier: 3.5.3
 
-  prettier@3.5.2: {}
+  prettier@3.5.3: {}
 
   proc-log@4.2.0: {}
 
@@ -9604,7 +9604,7 @@ snapshots:
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
-  sidetrack@0.1.13(@effect/platform@0.77.1(effect@3.13.4))(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4)):
+  sidetrack@0.1.14(@effect/platform@0.77.1(effect@3.13.4))(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4)):
     dependencies:
       '@effect/cli': 0.56.4(@effect/platform@0.77.1(effect@3.13.4))(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.4))(effect@3.13.4))(effect@3.13.4)
       '@effect/platform-node': 0.73.4(@effect/platform@0.77.1(effect@3.13.4))(effect@3.13.4)
