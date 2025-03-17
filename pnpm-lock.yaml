@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       next:
-        specifier: 15.2.1
-        version: 15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 15.2.2
+        version: 15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       nextra:
         specifier: 4.2.16
-        version: 4.2.16(acorn@8.14.1)(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2)
+        version: 4.2.16(acorn@8.14.1)(next@15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2)
       nextra-theme-docs:
         specifier: 4.2.16
-        version: 4.2.16(@types/react@18.2.24)(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(nextra@4.2.16(acorn@8.14.1)(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 4.2.16(@types/react@18.2.24)(next@15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(nextra@4.2.16(acorn@8.14.1)(next@15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react:
         specifier: 19.0.0
         version: 19.0.0
@@ -35,7 +35,7 @@ importers:
         version: 19.8.0
       '@effect/platform-node':
         specifier: 0.75.2
-        version: 0.75.2(effect@3.13.8)
+        version: 0.75.2(effect@3.13.11)
       '@eslint/eslintrc':
         specifier: 3.3.0
         version: 3.3.0
@@ -61,14 +61,14 @@ importers:
         specifier: 1.11.1
         version: 1.11.1
       effect:
-        specifier: 3.13.8
-        version: 3.13.8
+        specifier: 3.13.11
+        version: 3.13.11
       eslint:
         specifier: 9.22.0
         version: 9.22.0(jiti@2.4.2)
       eslint-config-next:
-        specifier: 15.2.1
-        version: 15.2.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
+        specifier: 15.2.2
+        version: 15.2.2(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
       eslint-config-prettier:
         specifier: 10.1.1
         version: 10.1.1(eslint@9.22.0(jiti@2.4.2))
@@ -83,7 +83,7 @@ importers:
         version: 9.1.7
       next-sitemap:
         specifier: 4.2.3
-        version: 4.2.3(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
+        version: 4.2.3(next@15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       pagefind:
         specifier: 1.3.0
         version: 1.3.0
@@ -98,7 +98,7 @@ importers:
         version: 4.1.1(prettier@3.5.3)
       sidetrack:
         specifier: 0.1.14
-        version: 0.1.14(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8))
+        version: 0.1.14(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11))
       typescript:
         specifier: 5.8.2
         version: 5.8.2
@@ -738,56 +738,56 @@ packages:
   '@next/env@13.5.8':
     resolution: {integrity: sha512-YmiG58BqyZ2FjrF2+5uZExL2BrLr8RTQzLXNDJ8pJr0O+rPlOeDPXp1p1/4OrR3avDidzZo3D8QO2cuDv1KCkw==}
 
-  '@next/env@15.2.1':
-    resolution: {integrity: sha512-JmY0qvnPuS2NCWOz2bbby3Pe0VzdAQ7XpEB6uLIHmtXNfAsAO0KLQLkuAoc42Bxbo3/jMC3dcn9cdf+piCcG2Q==}
+  '@next/env@15.2.2':
+    resolution: {integrity: sha512-yWgopCfA9XDR8ZH3taB5nRKtKJ1Q5fYsTOuYkzIIoS8TJ0UAUKAGF73JnGszbjk2ufAQDj6mDdgsJAFx5CLtYQ==}
 
-  '@next/eslint-plugin-next@15.2.1':
-    resolution: {integrity: sha512-6ppeToFd02z38SllzWxayLxjjNfzvc7Wm07gQOKSLjyASvKcXjNStZrLXMHuaWkhjqxe+cnhb2uzfWXm1VEj/Q==}
+  '@next/eslint-plugin-next@15.2.2':
+    resolution: {integrity: sha512-1+BzokFuFQIfLaRxUKf2u5In4xhPV7tUgKcK53ywvFl6+LXHWHpFkcV7VNeKlyQKUotwiq4fy/aDNF9EiUp4RQ==}
 
-  '@next/swc-darwin-arm64@15.2.1':
-    resolution: {integrity: sha512-aWXT+5KEREoy3K5AKtiKwioeblmOvFFjd+F3dVleLvvLiQ/mD//jOOuUcx5hzcO9ISSw4lrqtUPntTpK32uXXQ==}
+  '@next/swc-darwin-arm64@15.2.2':
+    resolution: {integrity: sha512-HNBRnz+bkZ+KfyOExpUxTMR0Ow8nkkcE6IlsdEa9W/rI7gefud19+Sn1xYKwB9pdCdxIP1lPru/ZfjfA+iT8pw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@next/swc-darwin-x64@15.2.1':
-    resolution: {integrity: sha512-E/w8ervu4fcG5SkLhvn1NE/2POuDCDEy5gFbfhmnYXkyONZR68qbUlJlZwuN82o7BrBVAw+tkR8nTIjGiMW1jQ==}
+  '@next/swc-darwin-x64@15.2.2':
+    resolution: {integrity: sha512-mJOUwp7al63tDpLpEFpKwwg5jwvtL1lhRW2fI1Aog0nYCPAhxbJsaZKdoVyPZCy8MYf/iQVNDuk/+i29iLCzIA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@next/swc-linux-arm64-gnu@15.2.1':
-    resolution: {integrity: sha512-gXDX5lIboebbjhiMT6kFgu4svQyjoSed6dHyjx5uZsjlvTwOAnZpn13w9XDaIMFFHw7K8CpBK7HfDKw0VZvUXQ==}
+  '@next/swc-linux-arm64-gnu@15.2.2':
+    resolution: {integrity: sha512-5ZZ0Zwy3SgMr7MfWtRE7cQWVssfOvxYfD9O7XHM7KM4nrf5EOeqwq67ZXDgo86LVmffgsu5tPO57EeFKRnrfSQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@next/swc-linux-arm64-musl@15.2.1':
-    resolution: {integrity: sha512-3v0pF/adKZkBWfUffmB/ROa+QcNTrnmYG4/SS+r52HPwAK479XcWoES2I+7F7lcbqc7mTeVXrIvb4h6rR/iDKg==}
+  '@next/swc-linux-arm64-musl@15.2.2':
+    resolution: {integrity: sha512-cgKWBuFMLlJ4TWcFHl1KOaVVUAF8vy4qEvX5KsNd0Yj5mhu989QFCq1WjuaEbv/tO1ZpsQI6h/0YR8bLwEi+nA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@next/swc-linux-x64-gnu@15.2.1':
-    resolution: {integrity: sha512-RbsVq2iB6KFJRZ2cHrU67jLVLKeuOIhnQB05ygu5fCNgg8oTewxweJE8XlLV+Ii6Y6u4EHwETdUiRNXIAfpBww==}
+  '@next/swc-linux-x64-gnu@15.2.2':
+    resolution: {integrity: sha512-c3kWSOSsVL8rcNBBfOq1+/j2PKs2nsMwJUV4icUxRgGBwUOfppeh7YhN5s79enBQFU+8xRgVatFkhHU1QW7yUA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@next/swc-linux-x64-musl@15.2.1':
-    resolution: {integrity: sha512-QHsMLAyAIu6/fWjHmkN/F78EFPKmhQlyX5C8pRIS2RwVA7z+t9cTb0IaYWC3EHLOTjsU7MNQW+n2xGXr11QPpg==}
+  '@next/swc-linux-x64-musl@15.2.2':
+    resolution: {integrity: sha512-PXTW9PLTxdNlVYgPJ0equojcq1kNu5NtwcNjRjHAB+/sdoKZ+X8FBu70fdJFadkxFIGekQTyRvPMFF+SOJaQjw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@next/swc-win32-arm64-msvc@15.2.1':
-    resolution: {integrity: sha512-Gk42XZXo1cE89i3hPLa/9KZ8OuupTjkDmhLaMKFohjf9brOeZVEa3BQy1J9s9TWUqPhgAEbwv6B2+ciGfe54Vw==}
+  '@next/swc-win32-arm64-msvc@15.2.2':
+    resolution: {integrity: sha512-nG644Es5llSGEcTaXhnGWR/aThM/hIaz0jx4MDg4gWC8GfTCp8eDBWZ77CVuv2ha/uL9Ce+nPTfYkSLG67/sHg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@next/swc-win32-x64-msvc@15.2.1':
-    resolution: {integrity: sha512-YjqXCl8QGhVlMR8uBftWk0iTmvtntr41PhG1kvzGp0sUP/5ehTM+cwx25hKE54J0CRnHYjSGjSH3gkHEaHIN9g==}
+  '@next/swc-win32-x64-msvc@15.2.2':
+    resolution: {integrity: sha512-52nWy65S/R6/kejz3jpvHAjZDPKIbEQu4x9jDBzmB9jJfuOy5rspjKu4u77+fI4M/WzLXrrQd57hlFGzz1ubcQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -2079,11 +2079,11 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
+  effect@3.13.11:
+    resolution: {integrity: sha512-SOUwX2E1ciNDPZDbSfx+YszGfIIg90sluKyx0BB6VwLIt8+NOA6tEAR3N2XI9MEOWfO/EpWzbARLnXI2hXcvaQ==}
+
   effect@3.13.4:
     resolution: {integrity: sha512-XZgCImyBpONuKdsBRk37JfV7242yxTu8r/TcL5ZELIyqRbMYa+Prr86cz1INxXi7iFXfU0havZkCJGyYp1BsiA==}
-
-  effect@3.13.8:
-    resolution: {integrity: sha512-v4659n0zzu9UEbbs7wrsQyrWl4yaqSPQDVVMCUVtiOp54zqzIw3HK4FUr7peOkmx63aXRHofiXpmY8GXDeez+g==}
 
   email-addresses@5.0.0:
     resolution: {integrity: sha512-4OIPYlA6JXqtVn8zpHpGiI7vE6EQOAg16aGnDMIAlZVinnoZ8208tW1hAbjWydgN/4PLTT9q+O1K6AH/vALJGw==}
@@ -2180,8 +2180,8 @@ packages:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
 
-  eslint-config-next@15.2.1:
-    resolution: {integrity: sha512-mhsprz7l0no8X+PdDnVHF4dZKu9YBJp2Rf6ztWbXBLJ4h6gxmW//owbbGJMBVUU+PibGJDAqZhW4pt8SC8HSow==}
+  eslint-config-next@15.2.2:
+    resolution: {integrity: sha512-g34RI7RFS4HybYFwGa/okj+8WZM+/fy+pEM+aqRQoVvM4gQhKrd4wIEddKmlZfWD75j8LTwB5zwkmNv3DceH1A==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0 || ^9.0.0
       typescript: '>=3.3.1'
@@ -3410,8 +3410,8 @@ packages:
       react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
       react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
 
-  next@15.2.1:
-    resolution: {integrity: sha512-zxbsdQv3OqWXybK5tMkPCBKyhIz63RstJ+NvlfkaLMc/m5MwXgz2e92k+hSKcyBpyADhMk2C31RIiaDjUZae7g==}
+  next@15.2.2:
+    resolution: {integrity: sha512-dgp8Kcx5XZRjMw2KNwBtUzhngRaURPioxoNIVl5BOyJbhi9CUgEtKDO7fx5wh8Z8vOVX1nYZ9meawJoRrlASYA==}
     engines: {node: ^18.18.0 || ^19.8.0 || >= 20.0.0}
     hasBin: true
     peerDependencies:
@@ -4929,10 +4929,10 @@ snapshots:
 
   '@corex/deepmerge@4.0.43': {}
 
-  '@effect/cli@0.56.4(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8))(effect@3.13.4)':
+  '@effect/cli@0.56.4(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11))(effect@3.13.4)':
     dependencies:
-      '@effect/printer': 0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8)
-      '@effect/printer-ansi': 0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8)
+      '@effect/printer': 0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11)
+      '@effect/printer-ansi': 0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11)
       effect: 3.13.4
       ini: 4.1.3
       toml: 3.0.0
@@ -4944,10 +4944,10 @@ snapshots:
       effect: 3.13.4
       multipasta: 0.2.5
 
-  '@effect/platform-node-shared@0.29.2(effect@3.13.8)':
+  '@effect/platform-node-shared@0.29.2(effect@3.13.11)':
     dependencies:
       '@parcel/watcher': 2.5.1
-      effect: 3.13.8
+      effect: 3.13.11
       multipasta: 0.2.5
 
   '@effect/platform-node@0.73.4(effect@3.13.4)':
@@ -4961,10 +4961,10 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@effect/platform-node@0.75.2(effect@3.13.8)':
+  '@effect/platform-node@0.75.2(effect@3.13.11)':
     dependencies:
-      '@effect/platform-node-shared': 0.29.2(effect@3.13.8)
-      effect: 3.13.8
+      '@effect/platform-node-shared': 0.29.2(effect@3.13.11)
+      effect: 3.13.11
       mime: 3.0.0
       undici: 7.4.0
       ws: 8.18.1
@@ -4972,20 +4972,20 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8)':
+  '@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11)':
     dependencies:
-      '@effect/printer': 0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8)
-      '@effect/typeclass': 0.32.1(effect@3.13.8)
-      effect: 3.13.8
+      '@effect/printer': 0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11)
+      '@effect/typeclass': 0.32.1(effect@3.13.11)
+      effect: 3.13.11
 
-  '@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8)':
+  '@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11)':
     dependencies:
-      '@effect/typeclass': 0.32.1(effect@3.13.8)
-      effect: 3.13.8
+      '@effect/typeclass': 0.32.1(effect@3.13.11)
+      effect: 3.13.11
 
-  '@effect/typeclass@0.32.1(effect@3.13.8)':
+  '@effect/typeclass@0.32.1(effect@3.13.11)':
     dependencies:
-      effect: 3.13.8
+      effect: 3.13.11
 
   '@emnapi/runtime@1.3.1':
     dependencies:
@@ -5358,34 +5358,34 @@ snapshots:
 
   '@next/env@13.5.8': {}
 
-  '@next/env@15.2.1': {}
+  '@next/env@15.2.2': {}
 
-  '@next/eslint-plugin-next@15.2.1':
+  '@next/eslint-plugin-next@15.2.2':
     dependencies:
       fast-glob: 3.3.1
 
-  '@next/swc-darwin-arm64@15.2.1':
+  '@next/swc-darwin-arm64@15.2.2':
     optional: true
 
-  '@next/swc-darwin-x64@15.2.1':
+  '@next/swc-darwin-x64@15.2.2':
     optional: true
 
-  '@next/swc-linux-arm64-gnu@15.2.1':
+  '@next/swc-linux-arm64-gnu@15.2.2':
     optional: true
 
-  '@next/swc-linux-arm64-musl@15.2.1':
+  '@next/swc-linux-arm64-musl@15.2.2':
     optional: true
 
-  '@next/swc-linux-x64-gnu@15.2.1':
+  '@next/swc-linux-x64-gnu@15.2.2':
     optional: true
 
-  '@next/swc-linux-x64-musl@15.2.1':
+  '@next/swc-linux-x64-musl@15.2.2':
     optional: true
 
-  '@next/swc-win32-arm64-msvc@15.2.1':
+  '@next/swc-win32-arm64-msvc@15.2.2':
     optional: true
 
-  '@next/swc-win32-x64-msvc@15.2.1':
+  '@next/swc-win32-x64-msvc@15.2.2':
     optional: true
 
   '@nodelib/fs.scandir@2.1.5':
@@ -6762,12 +6762,12 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  effect@3.13.4:
+  effect@3.13.11:
     dependencies:
       '@standard-schema/spec': 1.0.0
       fast-check: 3.23.2
 
-  effect@3.13.8:
+  effect@3.13.4:
     dependencies:
       '@standard-schema/spec': 1.0.0
       fast-check: 3.23.2
@@ -6947,9 +6947,9 @@ snapshots:
 
   escape-string-regexp@5.0.0: {}
 
-  eslint-config-next@15.2.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2):
+  eslint-config-next@15.2.2(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2):
     dependencies:
-      '@next/eslint-plugin-next': 15.2.1
+      '@next/eslint-plugin-next': 15.2.2
       '@rushstack/eslint-patch': 1.10.5
       '@typescript-eslint/eslint-plugin': 8.25.0(@typescript-eslint/parser@8.25.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
       '@typescript-eslint/parser': 8.25.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
@@ -8681,22 +8681,22 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  next-sitemap@4.2.3(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)):
+  next-sitemap@4.2.3(next@15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)):
     dependencies:
       '@corex/deepmerge': 4.0.43
       '@next/env': 13.5.8
       fast-glob: 3.3.3
       minimist: 1.2.8
-      next: 15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      next: 15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
   next-themes@0.4.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  next@15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
-      '@next/env': 15.2.1
+      '@next/env': 15.2.2
       '@swc/counter': 0.1.3
       '@swc/helpers': 0.5.15
       busboy: 1.6.0
@@ -8706,26 +8706,26 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
       styled-jsx: 5.1.6(react@19.0.0)
     optionalDependencies:
-      '@next/swc-darwin-arm64': 15.2.1
-      '@next/swc-darwin-x64': 15.2.1
-      '@next/swc-linux-arm64-gnu': 15.2.1
-      '@next/swc-linux-arm64-musl': 15.2.1
-      '@next/swc-linux-x64-gnu': 15.2.1
-      '@next/swc-linux-x64-musl': 15.2.1
-      '@next/swc-win32-arm64-msvc': 15.2.1
-      '@next/swc-win32-x64-msvc': 15.2.1
+      '@next/swc-darwin-arm64': 15.2.2
+      '@next/swc-darwin-x64': 15.2.2
+      '@next/swc-linux-arm64-gnu': 15.2.2
+      '@next/swc-linux-arm64-musl': 15.2.2
+      '@next/swc-linux-x64-gnu': 15.2.2
+      '@next/swc-linux-x64-musl': 15.2.2
+      '@next/swc-win32-arm64-msvc': 15.2.2
+      '@next/swc-win32-x64-msvc': 15.2.2
       sharp: 0.33.5
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
 
-  nextra-theme-docs@4.2.16(@types/react@18.2.24)(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(nextra@4.2.16(acorn@8.14.1)(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  nextra-theme-docs@4.2.16(@types/react@18.2.24)(next@15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(nextra@4.2.16(acorn@8.14.1)(next@15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@headlessui/react': 2.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       clsx: 2.1.1
-      next: 15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      next: 15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       next-themes: 0.4.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      nextra: 4.2.16(acorn@8.14.1)(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2)
+      nextra: 4.2.16(acorn@8.14.1)(next@15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2)
       react: 19.0.0
       react-compiler-runtime: 0.0.0-experimental-22c6e49-20241219(react@19.0.0)
       react-dom: 19.0.0(react@19.0.0)
@@ -8738,7 +8738,7 @@ snapshots:
       - immer
       - use-sync-external-store
 
-  nextra@4.2.16(acorn@8.14.1)(next@15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2):
+  nextra@4.2.16(acorn@8.14.1)(next@15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2):
     dependencies:
       '@formatjs/intl-localematcher': 0.6.0
       '@headlessui/react': 2.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -8759,7 +8759,7 @@ snapshots:
       mdast-util-gfm: 3.1.0
       mdast-util-to-hast: 13.2.0
       negotiator: 1.0.0
-      next: 15.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      next: 15.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-compiler-runtime: 0.0.0-experimental-22c6e49-20241219(react@19.0.0)
       react-dom: 19.0.0(react@19.0.0)
@@ -9607,9 +9607,9 @@ snapshots:
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
-  sidetrack@0.1.14(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8)):
+  sidetrack@0.1.14(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11)):
     dependencies:
-      '@effect/cli': 0.56.4(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.8))(effect@3.13.8))(effect@3.13.4)
+      '@effect/cli': 0.56.4(@effect/printer-ansi@0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11))(@effect/printer@0.41.1(@effect/typeclass@0.32.1(effect@3.13.11))(effect@3.13.11))(effect@3.13.4)
       '@effect/platform-node': 0.73.4(effect@3.13.4)
       '@sidetrack/pg-migrate': 0.1.2(pg@8.14.0)
       effect: 3.13.4
