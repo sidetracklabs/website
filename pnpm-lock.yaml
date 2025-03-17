@@ -34,8 +34,8 @@ importers:
         specifier: 19.8.0
         version: 19.8.0
       '@effect/platform-node':
-        specifier: 0.74.1
-        version: 0.74.1(effect@3.13.8)
+        specifier: 0.75.2
+        version: 0.75.2(effect@3.13.8)
       '@eslint/eslintrc':
         specifier: 3.3.0
         version: 3.3.0
@@ -246,11 +246,11 @@ packages:
       '@effect/platform': ^0.77.4
       effect: ^3.13.4
 
-  '@effect/platform-node-shared@0.28.1':
-    resolution: {integrity: sha512-5bPMbdvAcmBIE/fwojC7JYBl6xDlfLHYfS3maGyyC+4t1DCBaJ9NKchj0LA4+8BEglhWtmUtgOz6mq1b9cqaKg==}
+  '@effect/platform-node-shared@0.29.2':
+    resolution: {integrity: sha512-C6BOxC9F/7lVFTTQ9jXNa6I8Gio9HMsVUvJButPNd2XiHKURXmSK41Z0QwjG2Km2MVSyCGeqqsQzbWDJ2DDMKg==}
     peerDependencies:
-      '@effect/platform': ^0.78.1
-      effect: ^3.13.8
+      '@effect/platform': ^0.79.2
+      effect: ^3.13.11
 
   '@effect/platform-node@0.73.4':
     resolution: {integrity: sha512-mIsOxD3mmbwDjSrsRbxYYCzmSztQSRk4Bu/wej2E3c3pKQq5nwBtob8+H+idC1ugtTyuzJs7lJGSSuACiDjTnA==}
@@ -258,11 +258,11 @@ packages:
       '@effect/platform': ^0.77.4
       effect: ^3.13.4
 
-  '@effect/platform-node@0.74.1':
-    resolution: {integrity: sha512-Zt6eHxLxVeja0mGQ0AUD/OZwjJJCK6FiLpvcFcIWZhiyjsPEZYGyLtBqwikgJAD8prteFdOo8rkhQTzzKS5saw==}
+  '@effect/platform-node@0.75.2':
+    resolution: {integrity: sha512-zwnarHHtHGtE3665q1kCcgcWvtmI288NENHyDRqiNMEE08kQIOHfWpzz5pmdtV5lb0sLRVu3eCC9RUpn+sxsyA==}
     peerDependencies:
-      '@effect/platform': ^0.78.1
-      effect: ^3.13.8
+      '@effect/platform': ^0.79.2
+      effect: ^3.13.11
 
   '@effect/printer-ansi@0.41.1':
     resolution: {integrity: sha512-3TiahYMKWF2gRDTMaIUxxOK8R+lwinZFMcrX+mAVo4LBaDs5YfT+0us0B9e8g+rogX0qFjH69jQovKDCWLgmOA==}
@@ -4944,7 +4944,7 @@ snapshots:
       effect: 3.13.4
       multipasta: 0.2.5
 
-  '@effect/platform-node-shared@0.28.1(effect@3.13.8)':
+  '@effect/platform-node-shared@0.29.2(effect@3.13.8)':
     dependencies:
       '@parcel/watcher': 2.5.1
       effect: 3.13.8
@@ -4961,9 +4961,9 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@effect/platform-node@0.74.1(effect@3.13.8)':
+  '@effect/platform-node@0.75.2(effect@3.13.8)':
     dependencies:
-      '@effect/platform-node-shared': 0.28.1(effect@3.13.8)
+      '@effect/platform-node-shared': 0.29.2(effect@3.13.8)
       effect: 3.13.8
       mime: 3.0.0
       undici: 7.4.0
