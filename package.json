@@ -33,7 +33,7 @@
     "sharp": "0.33.5"
   },
   "devDependencies": {
-    "@effect/platform-node": "0.76.2",
+    "@effect/platform-node": "0.76.6",
     "@commitlint/cli": "19.8.0",
     "@commitlint/config-conventional": "19.8.0",
     "@eslint/eslintrc": "3.3.1",
@@ -44,7 +44,7 @@
     "@types/pg": "8.11.11",
     "commitizen": "4.3.1",
     "cz-git": "1.11.1",
-    "effect": "3.14.1",
+    "effect": "3.14.3",
     "eslint": "9.23.0",
     "eslint-config-next": "15.2.3",
     "eslint-config-prettier": "10.1.1",
