@@ -41,7 +41,7 @@
     "@mdx-js/mdx": "3.1.0",
     "@sidetrack/client-prisma": "0.1.14",
     "@types/node": "22.15.17",
-    "@types/pg": "8.11.14",
+    "@types/pg": "8.15.1",
     "commitizen": "4.3.1",
     "cz-git": "1.11.1",
     "effect": "3.14.18",
