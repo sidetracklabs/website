@@ -12,11 +12,11 @@ importers:
         specifier: 15.5.0
         version: 15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       nextra:
-        specifier: 4.3.0
-        version: 4.3.0(acorn@8.15.0)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
+        specifier: 4.4.0
+        version: 4.4.0(acorn@8.15.0)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
       nextra-theme-docs:
-        specifier: 4.3.0
-        version: 4.3.0(@types/react@18.2.24)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(nextra@4.3.0(acorn@8.15.0)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 4.4.0
+        version: 4.4.0(@types/react@18.2.24)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(nextra@4.4.0(acorn@8.15.0)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -3571,16 +3571,16 @@ packages:
       sass:
         optional: true
 
-  nextra-theme-docs@4.3.0:
-    resolution: {integrity: sha512-f8QDU2ZDp6um0yn9VyejcDRBAMWeeM1EYAknZjclkNArXQMc7n/Z+P60EEjUz79eZQKEo7Bk8kKa9X2fU8FsHQ==}
+  nextra-theme-docs@4.4.0:
+    resolution: {integrity: sha512-DqcP1rns1RP1mkvfw5cf/L2eho+Qg40FzqLCTm6kfSEafewwYNfdRotvk7Sa0Bzsr1FbOulIxxgAR4cXDdoZPQ==}
     peerDependencies:
       next: '>=14'
-      nextra: 4.3.0
+      nextra: 4.4.0
       react: '>=18'
       react-dom: '>=18'
 
-  nextra@4.3.0:
-    resolution: {integrity: sha512-hMVd8oyr9ee3h0rWkM0JWx5AEiwU5FBYH+Z+TSJ7iWNpaLDt732fUV4nQhfO/8AReuP379S1cDWM1RPnHv112A==}
+  nextra@4.4.0:
+    resolution: {integrity: sha512-2PWOxfmtb9Dg46xPLGAva32kHIh1hcLIZyG7kbYKw8EcQ66rcgX9K+/6bkE9Pp1fR+t4+5aPOWlGbzZXdb0nsQ==}
     engines: {node: '>=18'}
     peerDependencies:
       next: '>=14'
@@ -8959,13 +8959,13 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  nextra-theme-docs@4.3.0(@types/react@18.2.24)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(nextra@4.3.0(acorn@8.15.0)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2))(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  nextra-theme-docs@4.4.0(@types/react@18.2.24)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(nextra@4.4.0(acorn@8.15.0)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2))(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       '@headlessui/react': 2.2.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       clsx: 2.1.1
       next: 15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       next-themes: 0.4.4(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      nextra: 4.3.0(acorn@8.15.0)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
+      nextra: 4.4.0(acorn@8.15.0)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
       react: 19.1.1
       react-compiler-runtime: 19.1.0-rc.2(react@19.1.1)
       react-dom: 19.1.1(react@19.1.1)
@@ -8977,7 +8977,7 @@ snapshots:
       - immer
       - use-sync-external-store
 
-  nextra@4.3.0(acorn@8.15.0)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2):
+  nextra@4.4.0(acorn@8.15.0)(next@15.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2):
     dependencies:
       '@formatjs/intl-localematcher': 0.6.0
       '@headlessui/react': 2.2.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
