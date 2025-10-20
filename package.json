@@ -33,7 +33,7 @@
     "sharp": "0.34.4"
   },
   "devDependencies": {
-    "@effect/platform-node": "0.98.3",
+    "@effect/platform-node": "0.98.4",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@eslint/eslintrc": "3.3.1",
