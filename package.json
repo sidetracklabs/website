@@ -58,7 +58,7 @@
     "prettier-plugin-sort-json": "4.1.1",
     "sidetrack": "0.1.14",
     "typescript": "5.9.3",
-    "vitest": "3.2.4"
+    "vitest": "4.0.16"
   },
   "packageManager": "pnpm@10.27.0"
 }
